@@ -1,1 +1,1 @@
-f'This is a python program'
+print("hi")
