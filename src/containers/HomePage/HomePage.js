@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 
+import classes from './HomePage.css';
+
 class HomePage extends Component {
     render() {
         return(
-            <div>HomePage Test</div>
+            <div className={classes.HomePage}>HomePage Content Test</div>
         );
     }
 }

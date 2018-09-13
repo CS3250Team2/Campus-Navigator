@@ -5,7 +5,6 @@ import Toolbar from '../Navigation/Toolbar/Toolbar';
 
 const layout = props => (
     <Aux>
-        <div>Drawer/Backdrop</div>
         <Toolbar />
         <main>
             {props.children}
