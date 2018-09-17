@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 class FileInput extends Component{
-  addFile = () => {
+  addFile = (file) => {
     //let files = this.refs.fileUpload.getInputDOMNode().files;
     //document.getElementById("fileNum").innerHTML = 2;
     console.log("please work")
+    console.log(file)
   }
 
   render(){
