@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
    const multer = require('multer');
    const uuidv4 = require('uuid/v4');
    const path = require('path');
-
+   // code found on https://blog.stvmlbrn.com/2017/12/17/upload-files-using-react-to-node-express-server.html
    // configure storage
    const storage = multer.diskStorage({
      destination: (req, file, cb) => {
@@ -46,4 +46,3 @@ const port = process.env.PORT || 3000;
    });
 
    app.listen(port, () => console.log(`Server listening on port ${port}`));
- 
