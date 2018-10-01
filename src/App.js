@@ -3,18 +3,21 @@ import FileInput from './components/fileInput'
 import './bootstrap-4.1.3-dist/bootstrap.min.css'
 //import './App.css';
 
+import classes from './App.css';
+import Layout from './components/Layout/Layout';
+import HomePage from './containers/HomePage/HomePage';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="InputComponent">
-          <FileInput />
-        </div>
+      <div className={classes.App}>
+        <Layout>
+          <HomePage/>
+        </Layout>
       </div>
 
     );
-  }
+  };
 }
 
 export default App;
