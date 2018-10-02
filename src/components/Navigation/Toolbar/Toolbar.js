@@ -6,6 +6,7 @@ import RegisterNav from '../RegisterNav/RegisterNav';
 
 const toolbar = (props) => (
     <header className={classes.Toolbar}>
+        <div className={classes.NavMenu}>&#9776;</div>
         <NavItems />
         <RegisterNav />
     </header>
