@@ -5,10 +5,10 @@ import NavItem from './NavItem/NavItem';
 
 const navItems = () => (
     <ul className={classes.NavItems}>
-        <NavItem>HOME</NavItem>
-        <NavItem>MEDIA</NavItem>
-        <NavItem>TEAM</NavItem> 
-        <NavItem>CONTACT</NavItem>
+        <NavItem link="/">HOME</NavItem>
+        <NavItem link="/media">MEDIA</NavItem>
+        <NavItem link="/team">TEAM</NavItem>
+        <NavItem link="/contact">CONTACT</NavItem>
     </ul>
 );
 
