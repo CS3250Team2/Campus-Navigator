@@ -1,0 +1,20 @@
+.App {
+    background: url('./assets/images/campus.jpg') no-repeat center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 5% 55% 40%;
+    grid-template-rows: 3.5rem auto;
+}
+
+.App main {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 767px) {
+    .App {
+        grid-template-columns: 5% auto 5%;
+    }
+}

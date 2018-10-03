@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-//import './App.css';
+import './bootstrap-4.1.3-dist/bootstrap.min.css'
+
+
+import classes from './App.css';
+import Layout from './components/Layout/Layout';
+import HomePage from './containers/HomePage/HomePage';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Application Header</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className={classes.App}>
+        <Layout>
+          <HomePage/>
+        </Layout>
       </div>
+
     );
-  }
+  };
 }
 
 export default App;
