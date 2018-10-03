@@ -4,6 +4,7 @@ const port = process.env.PORT || 3000;
    const multer = require('multer');
    const uuidv4 = require('uuid/v4');
    const path = require('path');
+   const spawn = require("child_process").spawn;
    // code found on https://blog.stvmlbrn.com/2017/12/17/upload-files-using-react-to-node-express-server.html
    // configure storage
    const storage = multer.diskStorage({
@@ -42,6 +43,14 @@ const port = process.env.PORT || 3000;
        filename() function defined in the diskStorage configuration. Other form fields
        are available here in req.body.
      */
+
+     const pythonProcess = spawn('python',["./hi.py"]);
+     pythonProcess.stdout.on('data', (data) => {
+         // Do something with the data returned from python script
+         app.get('/api/hello', (req, res) => {
+           res.send({ express: 'Hello From Express' });
+         });
+     });
      res.send();
    });
 
