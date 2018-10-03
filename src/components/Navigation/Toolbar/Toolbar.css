@@ -12,3 +12,27 @@
     box-sizing: border-box;
     z-index: 90;
 }
+
+.NavMenu {
+    display: none;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 767px) {
+    .Toolbar {
+        left: auto;
+        right: 0;
+    }
+    .Toolbar ul {
+        display: none;
+    }
+
+    .NavMenu {
+        display: block;
+        font-size: 1.5rem;
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.281);
+        cursor: pointer;
+    }
+}

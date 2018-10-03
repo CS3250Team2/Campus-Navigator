@@ -5,8 +5,8 @@ import NavItem from '../NavItems/NavItem/NavItem';
 
 const registerNav = (props) => (
     <ul className={classes.NavItems}>
-        <NavItem>REGISTER</NavItem>
-        <NavItem>LOGIN</NavItem>
+        <NavItem link="/register">REGISTER</NavItem>
+        <NavItem link="/login">LOGIN</NavItem>
     </ul>
 );
 
