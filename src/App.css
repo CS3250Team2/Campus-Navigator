@@ -1,5 +1,5 @@
 .App {
-    background: url('./assets/images/campus.jpg') no-repeat center fixed;
+    background: url('http://growhousegaming.com/assets/imgs/CampusNav/campus.jpg') no-repeat center fixed;
     background-size: cover;
     height: 100vh;
     display: grid;
