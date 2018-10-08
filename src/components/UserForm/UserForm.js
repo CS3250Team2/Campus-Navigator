@@ -40,9 +40,14 @@ class UserForm extends Component {
   render() {
     const { description, selectedFile } = this.state;
     return (
-      <form onSubmit={this.onSubmit} className={classes.UserForm}>
-        <img src="http://growhousegaming.com/assets/imgs/CampusNav/uploadButton.png" />
+      <form onSubmit={this.onSubmit} className={classes.UserForm} onClick={this.onChange}>
+        <img
+          src="http://growhousegaming.com/assets/imgs/CampusNav/uploadButton.png"
+          for="uploadButton"
+          onClick={this.onChange}
+        />
         <input
+          id="uploadButton"
           type="file"
           name="selectedFile"
           onChange={this.onChange}
