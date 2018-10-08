@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UserForm from '../../components/userForm';
+import UserForm from '../../components/UserForm/UserForm';
 
 import classes from './HomePage.css';
 
@@ -8,10 +8,7 @@ class HomePage extends Component {
         return(
             <div className={classes.HomePage}>
                 <h1>LET'S GET YOU<br />ON YOUR WAY</h1>
-                <div className="uploadButton">
-                  <h3>Upload Your schedule here</h3>
-                  <UserForm />
-                </div>
+                <UserForm />
             </div>
         );
     }
