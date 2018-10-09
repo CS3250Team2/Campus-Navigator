@@ -1,3 +1,10 @@
+/* Component Name: App
+ * Function: Root component of the application
+ * 
+ * Props Received: None
+ * 
+ */
+
 import React, { Component } from 'react';
 import './bootstrap-4.1.3-dist/bootstrap.min.css'
 

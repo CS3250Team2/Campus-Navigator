@@ -1,3 +1,10 @@
+/* Component Name: NavItems
+ * Function: Container for primary navigation (home, contact, etc.)
+ * 
+ * Props Received: None
+ * 
+ */
+
 import React from 'react';
 
 import classes from './NavItems.css';
