@@ -1,5 +1,8 @@
 .Main{
   font-family: helvetica;
+  width:80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 h3{
   margin-left: 35%;
@@ -7,20 +10,20 @@ h3{
   width: 30%;
 }
 img{
-  margin-left: 35%;
-  margin-right:35%;
-  width: 20%;
+  margin-left: 0%;
+
+  width:100%;
 }
 input{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-top: 10px;
   border-width: 0px;
-  width:80%;
   padding-left: 10px;
   padding-right: 10px;
+  width:100%;
 }
 .SubmitButton{
-  margin-left: 50%;
+  margin-left: 70%;
   width:30%;
   background-color: #00457c;
   color:#ffffff;
