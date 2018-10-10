@@ -1,10 +1,15 @@
 .Main{
   font-family: helvetica;
 }
-img h3{
-  margin-left: 30%;
-  margin-right:30%;
-  width: 40%;
+h3{
+  margin-left: 35%;
+  margin-right:35%;
+  width: 30%;
+}
+img{
+  margin-left: 35%;
+  margin-right:35%;
+  width: 20%;
 }
 input{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -15,6 +20,8 @@ input{
   padding-right: 10px;
 }
 .SubmitButton{
+  margin-left: 50%;
+  width:30%;
   background-color: #00457c;
   color:#ffffff;
   font-weight: bold;
