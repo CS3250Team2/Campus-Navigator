@@ -39,12 +39,6 @@ class UserForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
-          type="text"
-          name="description"
-          value={description}
-          onChange={this.onChange}
-        />
-        <input
           type="file"
           name="selectedFile"
           onChange={this.onChange}

@@ -1,0 +1,25 @@
+.Main{
+  font-family: helvetica;
+}
+img h3{
+  margin-left: 30%;
+  margin-right:30%;
+  width: 40%;
+}
+input{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 10px;
+  border-width: 0px;
+  width:80%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.SubmitButton{
+  background-color: #00457c;
+  color:#ffffff;
+  font-weight: bold;
+}
+h3{
+  color:#00457c;
+  font-weight: bold;
+}
