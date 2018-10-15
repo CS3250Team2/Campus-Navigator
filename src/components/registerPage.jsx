@@ -13,13 +13,13 @@ class RegisterPage extends Component {
         </div>
         <form>
           <input placeholder="Create Username"></input>
-          <br></br>
+          <br />
           <input placeholder="Create Password"></input>
-          <br></br>
+          <br />
           <input placeholder="Confirm Password"></input>
-          <br></br>
-            <div class="g-recaptcha" data-sitekey='6Lc8MHUUAAAAAD8YIzicLlA-pa-8dTN4qFycOLoU'></div>
-          <br></br>
+          <br />
+            <div className="g-recaptcha" data-sitekey='6Lc8MHUUAAAAAD8YIzicLlA-pa-8dTN4qFycOLoU'></div>
+          <br />
           <input type='submit'className={classes.SubmitButton}></input>
         </form>
       </div>
