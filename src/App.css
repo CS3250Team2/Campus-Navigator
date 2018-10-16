@@ -3,8 +3,9 @@
     background-size: cover;
     height: 100vh;
     display: grid;
-    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-columns: 5% 30% 30% 30% 5%;
     grid-template-rows: 3.5rem auto;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .App main {
@@ -13,7 +14,7 @@
 }
 
 /* Responsive Styling */
-@media screen and (max-width: 767px) {
+@media (max-width: 767.98px) {
     .App {
         grid-template-columns: 5% auto 5%;
     }

@@ -5,12 +5,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 /* Responsive Styling */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 992px) {
   html {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
