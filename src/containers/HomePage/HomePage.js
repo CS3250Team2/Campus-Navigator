@@ -14,7 +14,7 @@ class HomePage extends Component {
     render() {
         return(
             <div className={classes.HomePage}>
-                <h1>LET'S GET YOU<br />ON YOUR WAY</h1>
+                <h1>LET'S GET YOU ON YOUR WAY</h1>
                 <UserForm />
             </div>
         );
