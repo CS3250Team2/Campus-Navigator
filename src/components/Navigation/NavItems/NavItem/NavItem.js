@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+/* Component Name: NavItem
+ * Function: Individual navigation item, used in both NavItems and RegisterNav
+ * 
+ * Props Received: link - where the NavItem will direct to
+ * 
+ */
+
+ import React from 'react';
+>>>>>>> origin/rhiller-homepage
 
 import classes from './NavItem.css';
 

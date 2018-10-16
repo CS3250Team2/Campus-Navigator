@@ -1,0 +1,12 @@
+.UserForm {
+    
+}
+
+.UserForm img {
+    cursor: pointer;
+    width: 100%;
+}
+
+.UserForm input {
+    display: none;
+}

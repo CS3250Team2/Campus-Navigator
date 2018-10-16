@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+/* Component Name: NavItems
+ * Function: Container for primary navigation (home, contact, etc.)
+ * 
+ * Props Received: None
+ * 
+ */
+
+>>>>>>> origin/rhiller-homepage
 import React from 'react';
 
 import classes from './NavItems.css';

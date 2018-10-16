@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+/* Component Name: Layout
+ * Function: Handles the layout of the application
+ * 
+ * Props Received: None
+ * 
+ */
+
+>>>>>>> origin/rhiller-homepage
 import React from 'react';
 
 import Aux from '../../hoc/Auxiliary';
