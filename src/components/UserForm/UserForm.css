@@ -1,10 +1,10 @@
 .UserForm {
-    cursor: pointer;
+    
 }
 
 .UserForm img {
-    margin-left: 1rem;
-    max-width: 50%;
+    cursor: pointer;
+    width: 100%;
 }
 
 .UserForm input {
