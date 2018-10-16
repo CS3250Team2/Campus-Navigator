@@ -8,14 +8,8 @@ body {
 }
 
 /* Responsive Styling */
-<<<<<<< HEAD
-@media screen and (max-width: 767px) {
-  html {
-    font-size: 13px;
-=======
 @media screen and (max-width: 992px) {
   html {
     font-size: 12px;
->>>>>>> origin/rhiller-homepage
   }
 }

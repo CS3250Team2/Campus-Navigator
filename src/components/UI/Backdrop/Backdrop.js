@@ -1,14 +1,12 @@
-<<<<<<< HEAD
-=======
+
 /* Component Name: Backdrop
  * Function: Places a semi-transparent black overlay over the viewport
  *           for a "dimming" effect. Used in conjunction with Modal
- * 
+ *
  * Props Received: show - Determines if the modal/backdrop should be visible.
- * 
+ *
  */
 
->>>>>>> origin/rhiller-homepage
 import React from 'react';
 
 import classes from './Backdrop.css';

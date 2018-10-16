@@ -1,18 +1,12 @@
 .HomePage {
-<<<<<<< HEAD
-    background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-=======
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 1rem;
     margin: 5rem 0 0 0;
->>>>>>> origin/rhiller-homepage
 }
 
 .HomePage h1 {
     color: #EEE;
-<<<<<<< HEAD
     font-size: 4rem;
     padding: 0;
     margin: 0;
@@ -20,20 +14,16 @@
 .HomePage h3 {
     color: #EEE;
     font-size: 2rem;
-=======
     font-size: 3rem;
     font-weight: bold;
->>>>>>> origin/rhiller-homepage
     padding: 0;
     margin: 0;
 }
 
 /* Responsive Styling */
-<<<<<<< HEAD
 @media screen and (min-width: 768px) {
     .HomePage {
         margin: 10rem 0;
-=======
 @media (max-width: 767.98px) {
     .HomePage {
         margin: 3rem 0 0 0;
@@ -43,6 +33,5 @@
 @media (min-width: 768px) and (max-width: 1199.98px) {
     .HomePage {
         margin: 3rem 0 0 0;
->>>>>>> origin/rhiller-homepage
     }
 }

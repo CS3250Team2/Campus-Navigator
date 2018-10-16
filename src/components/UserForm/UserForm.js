@@ -45,10 +45,6 @@ class UserForm extends Component {
   render() {
     const { description, selectedFile } = this.state;
     return (
-<<<<<<< HEAD:src/components/userForm.jsx
-      <form onSubmit={this.onSubmit}>
-        <input
-=======
       <form onSubmit={this.onSubmit} className={classes.UserForm} onClick={this.onChange}>
         <img
           src="http://growhousegaming.com/assets/imgs/CampusNav/uploadButton.png"
@@ -57,7 +53,6 @@ class UserForm extends Component {
         />
         <input
           id="uploadButton"
->>>>>>> origin/rhiller-homepage:src/components/UserForm/UserForm.js
           type="file"
           name="selectedFile"
           onChange={this.onChange}
