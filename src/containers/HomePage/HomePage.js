@@ -16,7 +16,6 @@ class HomePage extends Component {
             <div className={classes.HomePage}>
                 <h1>LET'S GET YOU ON YOUR WAY</h1>
                 <UserForm />
->>>>>>> origin/rhiller-homepage
             </div>
         );
     }

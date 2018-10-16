@@ -6,7 +6,6 @@
  */
 
 import React from 'react';
-
 import classes from './NavItems.css';
 import NavItem from './NavItem/NavItem';
 

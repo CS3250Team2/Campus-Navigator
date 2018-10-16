@@ -1,19 +1,15 @@
 /* Component Name: App
  * Function: Root component of the application
- * 
+ *
  * Props Received: None
- * 
+ *
  */
 
 import React, { Component } from 'react';
 import './bootstrap-4.1.3-dist/bootstrap.min.css'
 
 
-<<<<<<< HEAD
-import classes from './app.css';
-=======
 import classes from './App.css';
->>>>>>> origin/rhiller-homepage
 import Layout from './components/Layout/Layout';
 import HomePage from './containers/HomePage/HomePage';
 

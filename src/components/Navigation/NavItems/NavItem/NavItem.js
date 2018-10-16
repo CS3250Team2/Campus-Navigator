@@ -1,6 +1,4 @@
 
-import React from 'react';
-
 /* Component Name: NavItem
  * Function: Individual navigation item, used in both NavItems and RegisterNav
  *
