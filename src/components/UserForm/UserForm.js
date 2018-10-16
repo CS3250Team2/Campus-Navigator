@@ -37,6 +37,11 @@ class UserForm extends Component {
       });
   }
 
+  //Sends click event to input element when upload img is clicked
+  middleMan = () => {
+    document.getElementById("uploadButton").click();
+  }
+
   render() {
     const { description, selectedFile } = this.state;
     return (
@@ -44,7 +49,7 @@ class UserForm extends Component {
         <img
           src="http://growhousegaming.com/assets/imgs/CampusNav/uploadButton.png"
           for="uploadButton"
-          onClick={this.onChange}
+          onClick={this.middleMan}
         />
         <input
           id="uploadButton"
