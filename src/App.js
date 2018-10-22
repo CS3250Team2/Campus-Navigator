@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from 'react';
-import './bootstrap-4.1.3-dist/bootstrap.min.css'
+//import './bootstrap-4.1.3-dist/bootstrap.min.css'
 
 
 import classes from './App.css';
