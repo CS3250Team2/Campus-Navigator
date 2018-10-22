@@ -1,12 +1,15 @@
-.UserForm {
-    
-}
-
 .UserForm img {
     cursor: pointer;
-    width: 100%;
+    margin: 0;
+    width: 80%;
 }
 
 .UserForm input {
     display: none;
+}
+
+@media (max-width: 425px) {
+    .UserForm img {
+        width: 100%;
+    }
 }
