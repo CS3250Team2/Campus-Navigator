@@ -8,7 +8,7 @@ body {
 }
 
 /* Responsive Styling */
-@media screen and (max-width: 992px) {
+@media (max-width: 1246px) {
   html {
     font-size: 12px;
   }
