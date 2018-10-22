@@ -2,7 +2,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 1rem;
-    margin: 5rem 0 0 0;
+    margin: 8rem 0 0 0;
 }
 
 .HomePage h1 {
@@ -21,18 +21,13 @@
 }
 
 /* Responsive Styling */
-@media screen and (min-width: 768px) {
-    .HomePage {
-        margin: 10rem 0;
-    }
-}    
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
     .HomePage {
         margin: 3rem 0 0 0;
     }
 }
 
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
     .HomePage {
         margin: 3rem 0 0 0;
     }
