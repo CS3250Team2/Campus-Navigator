@@ -5,7 +5,7 @@ process.on('unhandledRejection', err => {
   throw err;
 });
 
-//const fs = require('fs');
+const fs = require('fs');
 const chalk = require('chalk');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
@@ -18,11 +18,11 @@ const {
   prepareUrls,
 } = require('react-dev-utils/WebpackDevServerUtils');
 const openBrowser = require('react-dev-utils/openBrowser');
-//const paths = require('../config/paths');
+//const paths = require('../config/paths');// this is still being blocked by package.json
 //i see a theme of pathing not working
-//const config = require('../config/webpack.config.dev'); haha im figuring you out.
-//const createDevServerConfig = require('../config/webpackDevServer.config'); yep its anything with pathing
-//const useYarn = fs.existsSync(paths.yarnLockFile);
+//const config = require('../config/webpack.config.dev'); //haha im figuring you out.
+//const createDevServerConfig = require('../config/webpackDevServer.config');// yep its anything with pathing
+//const useYarn = fs.existsSync(paths.yarnLockFile);//turns out ryan figured out the problem and fixed it. It was to do with the package-lock.json it had an extra HEAD>>> in there
 const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
@@ -92,15 +92,6 @@ choosePort(HOST, DEFAULT_PORT)
     }
     process.exit(1);
   });
-
-
-
-
-
-
-
-
-
 
 const port = process.env.PORT || 3000;
    const express = require('express');
