@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 5% 30% 30% 30% 5%;
     grid-template-rows: 3.5rem auto;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 /* Responsive Styling */

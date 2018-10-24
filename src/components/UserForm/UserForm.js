@@ -48,6 +48,7 @@ class UserForm extends Component {
       <form onSubmit={this.onSubmit} className={classes.UserForm} onClick={this.onChange}>
         <img
           src="http://growhousegaming.com/assets/imgs/CampusNav/uploadButton.png"
+          alt="Upload Schedule"
           for="uploadButton"
           onClick={this.middleMan}
         />

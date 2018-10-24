@@ -1,27 +1,32 @@
-import React, { Component } from 'react';
-import classes from './Login.css';
-import axios from 'axios';
+import React, { Component } from "react";
+import classes from "./Login.css";
+import axios from "axios";
 
 class LoginPage extends Component {
-  render() {
-    return (
-      <div className={classes.Login}>
-        <div className={classes.ImageHeader}>
-          <img src={require('../../assets/images/logo03.png')} alt="Campus Navigator Logo"></img>
-          <br></br>
-          <h3>Login</h3>
-        </div>
-        <form>
-          <input placeholder="Enter Username"></input>
-          <br></br>
-          <input placeholder="Enter Password"></input>
-          <br></br>
-          <input type='submit'className={classes.SubmitButton}></input>
-        </form>
-      </div>
-
-    );
-  };
+    render() {
+        return (
+            <div className={classes.Login}>
+                <div className={classes.Content}>
+                    <div className={classes.ImageHeader}>
+                        <img
+                            src={require("../../assets/images/logo03.png")}
+                            alt="Campus Navigator Logo"
+                        />
+                        <h3>Login</h3>
+                    </div>
+                    <form>
+                        <input placeholder="Enter Username" />
+                        <input placeholder="Enter Password" />
+                        <input
+                            type="submit"
+                            className={classes.SubmitButton}
+                            value="Submit"
+                        />
+                    </form>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default LoginPage;

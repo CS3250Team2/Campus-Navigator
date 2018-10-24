@@ -1,40 +1,45 @@
-.Login{
-  font-family: helvetica;
-  width:80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: center;
-  grid-column: 3 / 4;
-  grid-row: 2;
+.Login {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    grid-column: 3 / 4;
+    grid-row: 2;
 }
 
-form{
-  padding: 0px;
+.Content {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 1rem;
 }
-img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:100%;
+
+img {
+    width: 100%;
 }
-input{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-top: 10px;
-  border-width: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  width:100%;
+
+input {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    width: 80%;
 }
-.SubmitButton{
-  margin-left: 70%;
-  width:30%;
-  background-color: #00457c;
-  color:#ffffff;
-  font-weight: bold;
+
+.SubmitButton {
+    margin-left: 60%;
+    width: 30%;
+    border-radius: 4px;
+    background-color: #25116c;
+    color: #ffffff;
+    font-weight: bold;
 }
-h3{
-  color:#00457c;
-  font-weight: bold;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+
+h3 {
+    color: #791313;
+    font-weight: bold;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 767.98px) {
+    .Login {
+        grid-column: 2 / 3;
+    }
 }
