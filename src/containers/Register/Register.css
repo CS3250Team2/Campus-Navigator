@@ -4,6 +4,8 @@
   margin-left: 10%;
   margin-right: 10%;
   text-align: center;
+  grid-column: 3 / 4;
+  grid-row: 2;
 }
 form{
   padding: 0px;

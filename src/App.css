@@ -12,11 +12,6 @@
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-.App main {
-    grid-column: 2 / 3;
-    grid-row: 2;
-}
-
 /* Responsive Styling */
 @media (max-width: 767.98px) {
     .App {

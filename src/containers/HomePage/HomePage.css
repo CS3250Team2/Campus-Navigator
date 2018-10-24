@@ -1,17 +1,22 @@
 .HomePage {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+.Content {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 1rem;
     margin: 5rem 0 0 0;
 }
 
-.HomePage h1 {
+.Content h1 {
     color: #EEE;
     font-size: 4rem;
     padding: 0;
     margin: 0;
 }
-.HomePage h3 {
+.Content h3 {
     color: #EEE;
     font-size: 2rem;
     font-size: 3rem;
