@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import classes from './registerPage.css';
+import classes from './Register.css';
 import axios from 'axios';
 
 class RegisterPage extends Component {
   render() {
     return (
-      <div className={classes.Main}>
+      <div className={classes.Register} id="regID">
         <div className={classes.ImageHeader}>
-          <img src={require('../assets/images/logo03.png')} alt="Campus Navigator Logo"></img>
+          <img src={require('../../assets/images/logo03.png')} alt="Campus Navigator Logo"></img>
           <br></br>
           <h3>Sign Up</h3>
         </div>

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import classes from './loginPage.css';
+import classes from './Login.css';
 import axios from 'axios';
 
 class LoginPage extends Component {
   render() {
     return (
-      <div className={classes.Main}>
+      <div className={classes.Login}>
         <div className={classes.ImageHeader}>
-          <img src={require('../assets/images/logo03.png')} alt="Campus Navigator Logo"></img>
+          <img src={require('../../assets/images/logo03.png')} alt="Campus Navigator Logo"></img>
           <br></br>
           <h3>Login</h3>
         </div>
