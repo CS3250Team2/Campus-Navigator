@@ -1,5 +1,5 @@
 .HomePage {
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
     grid-row: 2;
 }
 
@@ -15,6 +15,27 @@
     font-size: 4rem;
     padding: 0;
     margin: 0;
+}
+.Content .image {
+  display: inline-block;
+  max-width: auto;
+  margin-top: 50%;
+  margin: auto;
+  cursor: pointer;
+}
+
+.Content img {
+  display: block;
+  max-width: 100%;
+  width: 55%;
+  height: auto;
+}
+
+.Content .center {
+  position: fixed;
+  margin-top: 20%;
+  margin-left: 16%;
+  margin-right: 15%;
 }
 
 /* Responsive Styling */

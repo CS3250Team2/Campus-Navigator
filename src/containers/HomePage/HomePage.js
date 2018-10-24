@@ -15,8 +15,9 @@ class HomePage extends Component {
         return (
             <div className={classes.HomePage}>
                 <div className={classes.Content}>
-                    <h1>LET'S GET YOU ON YOUR WAY</h1>
-                    <UserForm />
+                  <div className="image">
+                    <img src={require('../../assets/images/Group 40.png')} className='center' alt='campus bar'/>
+                  </div>
                 </div>
             </div>
         );
