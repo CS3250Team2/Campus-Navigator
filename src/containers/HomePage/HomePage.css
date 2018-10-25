@@ -1,6 +1,6 @@
 .HomePage {
     grid-column: 3 / 4;
-    grid-row: 2;
+    grid-row: 3;
 }
 
 .Content {
@@ -19,23 +19,20 @@
 .Content .image {
   display: inline-block;
   max-width: auto;
-  margin-top: 50%;
   margin: auto;
-  cursor: pointer;
 }
 
 .Content img {
-  display: block;
+  display: inline-block;
   max-width: 100%;
-  width: 55%;
+  width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 .Content .center {
   position: fixed;
-  margin-top: 20%;
-  margin-left: 16%;
-  margin-right: 15%;
+  margin-bottom: auto;
 }
 
 /* Responsive Styling */
