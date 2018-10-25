@@ -16,6 +16,7 @@
     padding: 0;
     margin: 0;
 }
+
 .Content .image {
   display: inline-block;
   max-width: auto;
@@ -25,14 +26,14 @@
 .Content img {
   display: inline-block;
   max-width: 100%;
-  width: 100%;
+  width: 100%; /*have to figure out how to get it bigger than the box behind*/
   height: auto;
   cursor: pointer;
 }
 
 .Content .center {
   position: fixed;
-  margin-bottom: auto;
+  margin-bottom: auto; /*its not getting on top of the 3/4 box, help*/
 }
 
 /* Responsive Styling */
