@@ -4,7 +4,7 @@ process.env.NODE_ENV = 'development';
 process.on('unhandledRejection', err => {
   throw err;
 });
-
+//require('../config/env');
 const fs = require('fs');
 const chalk = require('chalk');
 const webpack = require('webpack');
@@ -18,7 +18,7 @@ const {
   prepareUrls,
 } = require('react-dev-utils/WebpackDevServerUtils');
 const openBrowser = require('react-dev-utils/openBrowser');
-//const paths = require('../config/paths');// this is still being blocked by package.json
+//const paths = require('C:/Users/pashw/Desktop/CS3250/Metro-Info-App/config/paths.js');// this is still being blocked by package.json
 //i see a theme of pathing not working
 //const config = require('../config/webpack.config.dev'); //haha im figuring you out.
 //const createDevServerConfig = require('../config/webpackDevServer.config');// yep its anything with pathing
