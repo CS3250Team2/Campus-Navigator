@@ -12,8 +12,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import classes from "./App.css";
 import Layout from "./components/Layout/Layout";
 import HomePage from "./containers/HomePage/HomePage";
-import Register from "./containers/Register/Register";
-import Login from "./containers/Login/Login";
+import Register from "./containers/LoginReg/Register";
+import Login from "./containers/LoginReg/Login";
 
 class App extends Component {
     render() {

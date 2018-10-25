@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import classes from "./Login.css";
+import classes from "./LoginReg.css";
 import axios from "axios";
 
 class LoginPage extends Component {
@@ -7,13 +7,12 @@ class LoginPage extends Component {
         return (
             <div className={classes.Login}>
                 <div className={classes.Content}>
-                    <div className={classes.ImageHeader}>
-                        <img
-                            src={require("../../assets/images/logo03.png")}
-                            alt="Campus Navigator Logo"
-                        />
-                        <h3>Login</h3>
-                    </div>
+                    <img
+                        className={classes.Logo}
+                        src={require("../../assets/images/logo03-2.png")}
+                        alt="Campus Navigator Logo"
+                    />
+                    <h3>Login</h3>
                     <form>
                         <input placeholder="Enter Username" />
                         <input placeholder="Enter Password" />

@@ -13,7 +13,7 @@
 }
 
 /* Responsive Styling */
-@media (max-width: 767.98px) {
+@media (max-width: 812.98px) {
     .App {
         grid-template-columns: 5% auto 5%;
         background-position: right;
