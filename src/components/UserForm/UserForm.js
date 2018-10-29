@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
     import axios from 'axios';
+    import classes from './UserForm.css';
 
     class UserForm extends Component {
       constructor() {
@@ -33,12 +34,21 @@ import React, { Component } from 'react';
             // access results...
           });
       }
+      middleMan = () => {
+        document.getElementById("uploadButton").click();
+      }
 
       render() {
         const { description, selectedFile } = this.state;
         return (
           <form onSubmit={this.onSubmit}>
+            <img
+              src="http://growhousegaming.com/assets/imgs/CampusNav/uploadButton.png"
+              for="uploadButton"
+              onClick={this.middleMan}
+            />
             <input
+              id="uploadButton"
               type="file"
               name="selectedFile"
               onChange={this.onChange}

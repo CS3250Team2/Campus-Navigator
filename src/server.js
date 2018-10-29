@@ -4,6 +4,7 @@ const port = process.env.PORT || 3000;
     const multer = require('multer');
     const uuidv4 = require('uuid/v4');
     const path = require('path');
+    const fs = require("fs");
 
     // configure storage
     const storage = multer.diskStorage({
@@ -34,8 +35,16 @@ const port = process.env.PORT || 3000;
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
+    app.get("/", (req, res) => {
+      res.sendFile(__dirname + "/index.html");
+    });
 
     app.post('/', upload.single('selectedFile'), (req, res) => {
+      console.log(req.file);
+      const absolutePath = path.join(__dirname, req.file.path);
+      const jsonString = fs.readFileSync(absolutePath, "utf-8");
+      const jsonObject = JSON.parse(jsonString);
+      console.log(jsonObject);
       /*
         We now have a new req.file object here. At this point the file has been saved
         and the req.file.filename value will be the name returned by the
