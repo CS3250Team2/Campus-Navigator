@@ -43,25 +43,27 @@ const port = process.env.PORT || 3000;
     app.post('/', upload.single('selectedFile'), (req, res) => {
       fs.readFile('./uploads/'+req.file.filename, 'utf8', function(err, data) {
         if (err) throw err;
-        console.log(data);
+        //console.log(data);
+        const parser = new htmlparser.Parser({
+            onopentag: function(name, attribs){
+                // summary="This table lists the scheduled meeting times and assigned instructors for this class.."
+                if(name === "script" && attribs.type === "text/javascript"){
+                    console.log("JS! Hooray!");
+                }
+            },
+            ontext: function(text){
+                console.log("-->", text);
+            },
+            onclosetag: function(tagname){
+                if(tagname === "script"){
+                    console.log("That's it?!");
+                }
+            }
+        }, {decodeEntities: true});
+        parser.write(data);
+        parser.end();
       });
-      const parser = new htmlparser.Parser({
-          onopentag: function(name, attribs){
-              if(name === "script" && attribs.type === "text/javascript"){
-                  console.log("JS! Hooray!");
-              }
-          },
-          ontext: function(text){
-              console.log("-->", text);
-          },
-          onclosetag: function(tagname){
-              if(tagname === "script"){
-                  console.log("That's it?!");
-              }
-          }
-      }, {decodeEntities: true});
-      parser.write("Xyz <script type='text/javascript'>var foo = '<<bar>>';</ script>");
-      parser.end();
+
 
 
       /*
