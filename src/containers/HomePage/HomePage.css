@@ -49,3 +49,10 @@
         padding: 1rem 2rem;
     }
 }
+
+@media (max-width: 767.98px) {
+    .HomePage {
+      grid-column: 2 / 3;
+      padding: 0;
+    }
+}
