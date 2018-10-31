@@ -4,6 +4,7 @@ const port = process.env.PORT || 3000;
     const multer = require('multer');
     const uuidv4 = require('uuid/v4');
     const path = require('path');
+    const htmlparser = require("htmlparser2");
     const fs = require("fs");
 
     // configure storage
@@ -40,11 +41,27 @@ const port = process.env.PORT || 3000;
     });
 
     app.post('/', upload.single('selectedFile'), (req, res) => {
-      console.log(req.file);
-      const absolutePath = path.join(__dirname, req.file.path);
-      const jsonString = fs.readFileSync(absolutePath, "utf-8");
-      const jsonObject = JSON.parse(jsonString);
-      console.log(jsonObject);
+
+
+      const parser = new htmlparser.Parser({
+          onopentag: function(name, attribs){
+              if(name === "script" && attribs.type === "text/javascript"){
+                  console.log("JS! Hooray!");
+              }
+          },
+          ontext: function(text){
+              console.log("-->", text);
+          },
+          onclosetag: function(tagname){
+              if(tagname === "script"){
+                  console.log("That's it?!");
+              }
+          }
+      }, {decodeEntities: true});
+      parser.write("Xyz <script type='text/javascript'>var foo = '<<bar>>';</ script>");
+      parser.end();
+
+
       /*
         We now have a new req.file object here. At this point the file has been saved
         and the req.file.filename value will be the name returned by the
