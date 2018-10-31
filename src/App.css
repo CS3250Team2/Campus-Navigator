@@ -7,7 +7,7 @@
     background-position: center;
     height: 100vh;
     display: grid;
-    grid-template-columns: 5% 18% 54% 18% 5%;
+    grid-template-columns: 5% 30% 30% 30% 5%;
     grid-template-rows: 3.5rem auto;
     font-family: Arial, sans-serif, Helvetica;
 }
