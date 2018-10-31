@@ -41,8 +41,10 @@ const port = process.env.PORT || 3000;
     });
 
     app.post('/', upload.single('selectedFile'), (req, res) => {
-
-
+      fs.readFile('./uploads/'+req.file.filename, 'utf8', function(err, data) {
+        if (err) throw err;
+        console.log(data);
+      });
       const parser = new htmlparser.Parser({
           onopentag: function(name, attribs){
               if(name === "script" && attribs.type === "text/javascript"){
