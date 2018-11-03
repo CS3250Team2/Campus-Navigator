@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import classes from "./App.css";
 import Layout from "./components/Layout/Layout";
+import HomePage from "./containers/HomePage/HomePage";
 import ScheduleUpload from "./containers/ScheduleUpload/ScheduleUpload";
 import Register from "./containers/LoginReg/Register";
 import Login from "./containers/LoginReg/Login";
@@ -21,9 +22,10 @@ class App extends Component {
             <div className={classes.App}>
                 <Router>
                     <Layout>
-                        <Route path="/" exact component={ScheduleUpload} />
-                        <Route path="/register" exact component={Register} />
-                        <Route path="/login" exact component={Login} />
+                        <Route path="/" exact component={HomePage} />
+                        <Route path="/upload" component={ScheduleUpload} />
+                        <Route path="/register" component={Register} />
+                        <Route path="/login" component={Login} />
                     </Layout>
                 </Router>
             </div>
