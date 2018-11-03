@@ -15,8 +15,8 @@ class RegisterPage extends Component {
                     <h3>Sign Up</h3>
                     <form>
                         <input placeholder="Create Username" />
-                        <input placeholder="Create Password" />
-                        <input placeholder="Confirm Password" />
+                        <input type="password" placeholder="Create Password" />
+                        <input type="password" placeholder="Confirm Password" />
                         {/*<div
                             className="g-recaptcha"
                             data-sitekey="6Lc8MHUUAAAAAD8YIzicLlA-pa-8dTN4qFycOLoU"
