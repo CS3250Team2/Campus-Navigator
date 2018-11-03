@@ -15,9 +15,10 @@ class HomePage extends Component {
         return (
             <div className={classes.HomePage}>
                 <div className={classes.Content}>
-                  <div className="image">
-                    <img src={require('../../assets/images/selectCampus.png')} className='center' alt='campus bar'/>
-                  </div>
+                    <img
+                        src={require('../../assets/images/selectCampus.png')}
+                        alt='campus bar'
+                    />
                 </div>
             </div>
         );
