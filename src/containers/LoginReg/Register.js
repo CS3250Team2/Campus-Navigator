@@ -9,7 +9,7 @@ class RegisterPage extends Component {
                 <div className={classes.Content}>
                     <img
                         className={classes.Logo}
-                        src={require("../../assets/images/logo03-2.png")}
+                        src={require("../../assets/images/logo03.png")}
                         alt="Campus Navigator Logo"
                     />
                     <h3>Sign Up</h3>
