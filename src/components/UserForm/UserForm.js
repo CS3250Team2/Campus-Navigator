@@ -60,8 +60,8 @@ class UserForm extends Component {
                         className={classes.UploadButton}
                         onClick={this.middleMan}
                     >
-                        UPLOAD SCHEDULE
-                        <FontAwesomeIcon icon="upload" />
+                            UPLOAD SCHEDULE &nbsp;
+                            <FontAwesomeIcon icon="upload" color="#25116c"/>
                     </div>
                     <div className={classes.SubmitButton}>GO</div>
                     <h3 id="fileName" className={classes.FileName} />

@@ -1,5 +1,5 @@
 .UserForm {
-    grid-row: 2;
+    grid-row: 3;
 }
 
 .ImageContainer {
@@ -15,15 +15,16 @@
 .UploadButton {
     grid-column: 1 / span 2;
     grid-row: 1;
+    max-width: 80%;
     background-color: rgba(255, 255, 255, 0.72);
-    color: rgba(157, 157, 157, 0.82);
+    color: #25116c;
 }
 
 .SubmitButton {
     grid-column: 1;
     grid-row: 2;
     background-color: rgba(157, 157, 157, 0.82);
-    color: rgba(255, 255, 255, 0.72);
+    color: #791313;
 }
 
 .UploadButton, .SubmitButton {

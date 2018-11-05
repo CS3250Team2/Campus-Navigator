@@ -1,6 +1,6 @@
 .ScheduleUpload {
-    width: 90%;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
     grid-column: 2 / 3;
     grid-row: 2;
 }
@@ -11,15 +11,23 @@
     padding: 1rem;
     margin: 5rem 0 0 0;
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
 }
 
-.Content h1 {
-    color: #791313;
-    font-size: 4rem;
-    padding: 0;
-    margin: 0;
+.Logo {
     grid-row: 1;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.Content h3 {
+    grid-row: 2;
+    color: #791313;
+    font-weight: bold;
+    margin: 1rem 0;
+    align-self: center;
+    justify-self: center;
 }
 
 /* Responsive Styling */
@@ -32,5 +40,12 @@
 @media (min-width: 576px) and (max-width: 812.98px) {
     .Content {
         padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 812.98px) {
+    .ScheduleUpload {
+        width: 100%;
+        margin-left: 0;
     }
 }
