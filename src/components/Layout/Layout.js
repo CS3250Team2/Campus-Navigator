@@ -1,11 +1,9 @@
-
 /* Component Name: Layout
  * Function: Handles the layout of the application
  *
  * Props Received: None
  *
  */
-
 
 import React from 'react';
 

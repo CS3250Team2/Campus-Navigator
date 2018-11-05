@@ -1,4 +1,12 @@
+/* Component Name: Register
+ * Function: Content for the Register page
+ *
+ * Props Received: None
+ *
+ */
+
 import React, { Component } from "react";
+import Content from "../Content/Content";
 import classes from "./LoginReg.css";
 import axios from "axios";
 
@@ -6,17 +14,28 @@ class RegisterPage extends Component {
     render() {
         return (
             <div className={classes.Register}>
-                <div className={classes.Content}>
-                    <img
-                        className={classes.Logo}
-                        src={require("../../assets/images/logo03-2.png")}
-                        alt="Campus Navigator Logo"
-                    />
-                    <h3>Sign Up</h3>
+                <Content title="Sign Up">
                     <form>
-                        <input placeholder="Create Username" />
-                        <input placeholder="Create Password" />
-                        <input placeholder="Confirm Password" />
+                        <label for="username">Username:</label>
+                        <input
+                            id="username"
+                            name="username"
+                            placeholder="Create Username"
+                        />
+                        <label for="password">Password:</label>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            placeholder="Create Password"
+                        />
+                        <label for="passwordConfirm">Confirm Password:</label>
+                        <input
+                            id="passwordConfirm"
+                            name="passwordConfirm"
+                            type="password"
+                            placeholder="Confirm Password"
+                        />
                         {/*<div
                             className="g-recaptcha"
                             data-sitekey="6Lc8MHUUAAAAAD8YIzicLlA-pa-8dTN4qFycOLoU"
@@ -27,7 +46,7 @@ class RegisterPage extends Component {
                             value="Submit"
                         />
                     </form>
-                </div>
+                </Content>
             </div>
         );
     }

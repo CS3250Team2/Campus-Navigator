@@ -1,11 +1,12 @@
-/* Component Name: HomePage
- * Function: Container for the content of the landing page
+/* Component Name: ScheduleUpload
+ * Function: Content of the schedule upload page
  *
  * Props Received: None
  *
  */
 
 import React, { Component } from "react";
+import Content from "../Content/Content"
 import UserForm from "../../components/UserForm/UserForm";
 
 import classes from "./ScheduleUpload.css";
@@ -14,10 +15,9 @@ class HomePage extends Component {
     render() {
         return (
             <div className={classes.ScheduleUpload}>
-                <div className={classes.Content}>
-                    <h1>LET'S GET YOU ON YOUR WAY</h1>
+                <Content title="Let's Get You On Your Way">
                     <UserForm />
-                </div>
+                </Content>
             </div>
         );
     }
