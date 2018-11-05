@@ -7,13 +7,14 @@
  */
 
  import React from 'react';
+ import { Link } from 'react-router-dom';
 
 
 import classes from './NavItem.css';
 
 const navItem = (props) => (
     <li className={classes.NavItem}>
-        <a href={props.link}>{props.children}</a>
+        <Link to={props.link}>{props.children}</Link>
     </li>
 );
 

@@ -1,11 +1,9 @@
-
 /* Component Name: Layout
  * Function: Handles the layout of the application
  *
  * Props Received: None
  *
  */
-
 
 import React from 'react';
 
@@ -15,9 +13,7 @@ import Toolbar from '../Navigation/Toolbar/Toolbar';
 const layout = props => (
     <Aux>
         <Toolbar />
-        <main>
             {props.children}
-        </main>
     </Aux>
 );
 

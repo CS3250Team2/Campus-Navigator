@@ -113,19 +113,15 @@ const port = process.env.PORT || 3000;
         console.log(times);
         console.log(date);
         console.log(days);
-
         fs.unlink('./uploads/'+filename, function(error) {
           if (error) {
               throw error;
           }
           console.log('Deleted filename', filename);
         })
-
       });
-
-
-
       /*
+
         We now have a new req.file object here. At this point the file has been saved
         and the req.file.filename value will be the name returned by the
         filename() function defined in the diskStorage configuration. Other form fields
