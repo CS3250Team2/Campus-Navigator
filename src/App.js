@@ -15,9 +15,12 @@ import HomePage from "./containers/HomePage/HomePage";
 import ScheduleUpload from "./containers/ScheduleUpload/ScheduleUpload";
 import Register from "./containers/LoginReg/Register";
 import Login from "./containers/LoginReg/Login";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
 class App extends Component {
     render() {
+        library.add(faUpload);
         return (
             <div className={classes.App}>
                 <Router>
