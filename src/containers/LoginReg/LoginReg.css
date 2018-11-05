@@ -1,41 +1,14 @@
 .Login, .Register {
-    width: 80%;
-    margin-left: 10%;
     grid-column: 3 / 4;
     grid-row: 2;
 }
 
-.Content {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 5rem 0 0 0;
-    display: grid;
-    grid-template-rows: auto auto auto;
-}
-
-.Logo {
-    grid-row: 1;
-    width: 100%;
-    align-self: center;
-    justify-self: center;
-}
-
-.Content h3 {
-    grid-row: 2;
-    color: #791313;
-    font-weight: bold;
-    margin: 1rem 0;
-    align-self: center;
-    justify-self: center;
-}
-
-.Content form {
+form {
     grid-row: 3;
     align-self: center;
 }
 
-.Content label {
+form label {
     display: block;
     margin-bottom: 0.5rem;
     left: 0;
@@ -43,7 +16,7 @@
     font-weight: bold;
 }
 
-.Content input {
+form input {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: none;
     border-radius: 5px;
@@ -53,7 +26,7 @@
     font-size: 1.2rem;
 }
 
-.Content .SubmitButton {
+form .SubmitButton {
     margin-top: 0.5rem;
     margin-left: 60%;
     width: 30%;
@@ -64,38 +37,10 @@
 }
 
 /* Responsive Styling */
-@media (max-width: 575.98px) {
-    .Content {
-        margin: 1rem 0 0 0;
-    }
-
-    .Logo {
-        width: 65%;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 812.98px) {
-    .Content {
-        margin-top: 2rem;
-    }
-
-    .Logo {
-        width: 55%;
-    }
-}
-
 @media (max-width: 812.98px) {
     .Login, .Register {
         grid-column: 2 / 3;
         width: 100%;
         margin-left: 0;
-    }
-
-    .Logo {
-        margin: 0.5rem 0 0.25rem 0;
-    }
-
-    .Content h3 {
-        margin-top: 0;
     }
 }

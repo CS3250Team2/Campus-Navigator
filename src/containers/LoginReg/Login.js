@@ -6,6 +6,7 @@
  */
 
 import React, { Component } from "react";
+import Content from "../Content/Content";
 import classes from "./LoginReg.css";
 import axios from "axios";
 
@@ -13,13 +14,7 @@ class LoginPage extends Component {
     render() {
         return (
             <div className={classes.Login}>
-                <div className={classes.Content}>
-                    <img
-                        className={classes.Logo}
-                        src={require("../../assets/images/logo03.png")}
-                        alt="Campus Navigator Logo"
-                    />
-                    <h3>Login</h3>
+                <Content title="Login">
                     <form>
                         <label for="username">Username:</label>
                         <input
@@ -41,7 +36,7 @@ class LoginPage extends Component {
                             value="Submit"
                         />
                     </form>
-                </div>
+                </Content>
             </div>
         );
     }

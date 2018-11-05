@@ -1,48 +1,8 @@
 .ScheduleUpload {
-    width: 80%;
-    margin-left: 10%;
     grid-column: 2 / 3;
     grid-row: 2;
 }
-
-.Content {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 5rem 0 0 0;
-    display: grid;
-    grid-template-rows: auto auto auto;
-}
-
-.Logo {
-    grid-row: 1;
-    width: 100%;
-    align-self: center;
-    justify-self: center;
-}
-
-.Content h3 {
-    grid-row: 2;
-    color: #791313;
-    font-weight: bold;
-    margin: 1rem 0;
-    align-self: center;
-    justify-self: center;
-}
-
 /* Responsive Styling */
-@media (max-width: 575.98px) {
-    .Content {
-        margin: 3rem 0 0 0;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 812.98px) {
-    .Content {
-        padding: 1rem 2rem;
-    }
-}
-
 @media (max-width: 812.98px) {
     .ScheduleUpload {
         width: 100%;
