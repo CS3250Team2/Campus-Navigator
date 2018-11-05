@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
     const path = require('path');
     const htmlparser = require("htmlparser2");
     const fs = require("fs");
+    let filename = '';
 
     // configure storage
     const storage = multer.diskStorage({
@@ -48,7 +49,8 @@ const port = process.env.PORT || 3000;
       let building = [];
       let date = [];
       let isGood = false;
-      fs.readFile('./uploads/'+req.file.filename, 'utf8', function(err, data) {
+      filename = req.file.filename;
+      fs.readFile('./uploads/'+filename, 'utf8', function(err, data) {
         if (err) throw err;
         //console.log(data);
         const parser = new htmlparser.Parser({
@@ -111,6 +113,14 @@ const port = process.env.PORT || 3000;
         console.log(times);
         console.log(date);
         console.log(days);
+
+        fs.unlink('./uploads/'+filename, function(error) {
+          if (error) {
+              throw error;
+          }
+          console.log('Deleted filename', filename);
+        })
+
       });
 
 
