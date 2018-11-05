@@ -12,10 +12,9 @@ import NavItem from './NavItem/NavItem';
 const navItems = () => (
     <ul className={classes.NavItems}>
         <NavItem link="/">HOME</NavItem>
-
-
-        <NavItem link="/contact">CONTACT</NavItem>
+        <NavItem link="/upload">SCHEDULE</NavItem>
         <NavItem link='/features'>FEATURES</NavItem>
+        <NavItem link="/contact">CONTACT</NavItem>
     </ul>
 );
 
