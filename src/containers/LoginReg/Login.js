@@ -14,8 +14,20 @@ class LoginPage extends Component {
                     />
                     <h3>Login</h3>
                     <form>
-                        <input placeholder="Enter Username" />
-                        <input type="password" placeholder="Enter Password" />
+                        <label for="username">Username:</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter Username"
+                        />
+                        <label for="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter Password"
+                        />
                         <input
                             type="submit"
                             className={classes.SubmitButton}

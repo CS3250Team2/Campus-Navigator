@@ -1,7 +1,6 @@
 .Login, .Register {
     width: 80%;
     margin-left: 10%;
-    text-align: center;
     grid-column: 3 / 4;
     grid-row: 2;
 }
@@ -11,24 +10,46 @@
     border-radius: 10px;
     padding: 1rem;
     margin: 5rem 0 0 0;
+    display: grid;
+    grid-template-rows: auto auto auto;
 }
 
 .Logo {
+    grid-row: 1;
     width: 100%;
-    margin: 1rem 0 0.5rem 0;
+    align-self: center;
+    justify-self: center;
 }
 
 .Content h3 {
+    grid-row: 2;
     color: #791313;
     font-weight: bold;
     margin: 1rem 0;
+    align-self: center;
+    justify-self: center;
+}
+
+.Content form {
+    grid-row: 3;
+    align-self: center;
+}
+
+.Content label {
+    display: block;
+    margin-bottom: 0.5rem;
+    left: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .Content input {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: none;
-    margin-bottom: 0.5rem;
-    width: 80%;
+    width: 100%;
+    margin-bottom: 1rem;
+    height: 2rem;
+    font-size: 1.2rem;
 }
 
 .Content .SubmitButton {
@@ -44,7 +65,7 @@
 /* Responsive Styling */
 @media (max-width: 575.98px) {
     .Content {
-        margin: 3rem 0 0 0;
+        margin: 1rem 0 0 0;
     }
 
     .Logo {
@@ -65,6 +86,8 @@
 @media (max-width: 812.98px) {
     .Login, .Register {
         grid-column: 2 / 3;
+        width: 100%;
+        margin-left: 0;
     }
 
     .Logo {
