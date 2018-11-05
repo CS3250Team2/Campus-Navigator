@@ -1,12 +1,11 @@
 /* Component Name: HomePage
- * Function: Container for the content of the landing page
+ * Function: Content of the landing page
  *
  * Props Received: None
  *
  */
 
 import React, { Component } from "react";
-import UserForm from "../../components/UserForm/UserForm";
 
 import classes from "./HomePage.css";
 

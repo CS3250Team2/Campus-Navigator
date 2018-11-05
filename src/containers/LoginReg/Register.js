@@ -1,3 +1,10 @@
+/* Component Name: Register
+ * Function: Content for the Register page
+ *
+ * Props Received: None
+ *
+ */
+
 import React, { Component } from "react";
 import classes from "./LoginReg.css";
 import axios from "axios";
