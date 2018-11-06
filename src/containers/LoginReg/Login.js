@@ -50,12 +50,12 @@ class LoginPage extends Component {
             <div className={classes.Login}>
                 <Content title="Login">
                     <form>
-                        <label for="username">Username:</label>
+                        <label for="username">Email:</label>
                         <input
                             type="text"
                             id="username"
                             name="username"
-                            placeholder="Enter Username"
+                            placeholder="Enter Email"
                         />
                         <label for="password">Password:</label>
                         <input
