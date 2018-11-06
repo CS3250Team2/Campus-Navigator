@@ -46,6 +46,10 @@ class UserForm extends Component {
         document.getElementById("uploadInput").click();
     };
 
+    middleMan2 = () => {
+      document.getElementById("submitInput").click();
+    }
+
     render() {
         const { description, selectedFile } = this.state;
         return (
@@ -63,7 +67,7 @@ class UserForm extends Component {
                             UPLOAD SCHEDULE &nbsp;
                             <FontAwesomeIcon icon="upload" color="#25116c"/>
                     </div>
-                    <div className={classes.SubmitButton}>GO</div>
+                    <div className={classes.SubmitButton} onClick={this.middleMan2}>GO</div>
                     <h3 id="fileName" className={classes.FileName} />
                 </div>
                 <input

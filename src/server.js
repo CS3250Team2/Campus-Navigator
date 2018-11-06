@@ -7,7 +7,6 @@ const port = process.env.PORT || 3000;
     const htmlparser = require("htmlparser2");
     const fs = require("fs");
     let filename = '';
-
     // configure storage
     const storage = multer.diskStorage({
       destination: (req, file, cb) => {
@@ -32,15 +31,12 @@ const port = process.env.PORT || 3000;
     });
     // create the multer instance that will be used to upload/save the file
     const upload = multer({ storage });
-
     const app = express();
-
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.get("/", (req, res) => {
       res.sendFile(__dirname + "/index.html");
     });
-
     app.post('/', upload.single('selectedFile'), (req, res) => {
       let summary ='';
       let counter =0;
