@@ -1,0 +1,11 @@
+.ScheduleUpload {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+/* Responsive Styling */
+@media (max-width: 812.98px) {
+    .ScheduleUpload {
+        width: 100%;
+        margin-left: 0;
+    }
+}

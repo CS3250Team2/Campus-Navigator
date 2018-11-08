@@ -1,20 +1,21 @@
 .App {
-    background: url('./assets/images/campus.jpg') no-repeat center fixed;
+    background-color: #999;
+    background-image: url('http://growhousegaming.com/assets/imgs/CampusNav/campus.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     height: 100vh;
     display: grid;
-    grid-template-columns: 5% 55% 40%;
+    grid-template-columns: 5% 30% 30% 30% 5%;
     grid-template-rows: 3.5rem auto;
-}
-
-.App main {
-    grid-column: 2 / 3;
-    grid-row: 2;
+    font-family: Arial, sans-serif;
 }
 
 /* Responsive Styling */
-@media screen and (max-width: 767px) {
+@media (max-width: 812.98px) {
     .App {
         grid-template-columns: 5% auto 5%;
+        background-position: right;
     }
 }

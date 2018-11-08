@@ -1,20 +1,27 @@
-import React, {Component} from 'react';
-import UserForm from '../../components/userForm';
+/* Component Name: HomePage
+ * Function: Content of the landing page
+ *
+ * Props Received: None
+ *
+ */
 
-import classes from './HomePage.css';
+import React, { Component } from "react";
+
+import classes from "./HomePage.css";
 
 class HomePage extends Component {
     render() {
-        return(
+        return (
             <div className={classes.HomePage}>
-                <h1>LET'S GET YOU<br />ON YOUR WAY</h1>
-                <div className="uploadButton">
-                  <h3>Upload Your schedule here</h3>
-                  <UserForm />
+                <div className={classes.Content}>
+                    <img
+                        src={require('../../assets/images/selectCampus.png')}
+                        alt='campus bar'
+                    />
                 </div>
             </div>
         );
     }
 }
 
-export default HomePage
+export default HomePage;
