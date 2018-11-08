@@ -1,0 +1,45 @@
+.Content {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 5rem 5% 0 5%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.Logo {
+    grid-row: 1;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.Content h2 {
+    grid-row: 2;
+    color: #791313;
+    font-weight: bold;
+    margin: 1rem 0;
+    align-self: center;
+    justify-self: center;
+}
+
+/* Responsive Styling */
+@media (max-width: 575.98px) {
+    .Content {
+        margin: 3rem 0 0 0;
+    }
+
+    .Logo {
+        width: 65%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 812.98px) {
+    .Content {
+        padding: 1rem 2rem;
+    }
+
+    .Logo {
+        width: 55%;
+    }
+}

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
+import classes from './UserForm.css';
 // code found on https://blog.stvmlbrn.com/2017/12/17/upload-files-using-react-to-node-express-server.html
-class UserForm extends Component {
+
+class OtherForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -34,11 +37,22 @@ class UserForm extends Component {
       });
   }
 
+  //Sends click event to input element when upload img is clicked
+  middleMan = () => {
+    document.getElementById("uploadButton").click();
+  }
+
   render() {
     const { description, selectedFile } = this.state;
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className={classes.UserForm} onClick={this.onChange}>
+        <img
+          src="http://growhousegaming.com/assets/imgs/CampusNav/uploadButton.png"
+          for="uploadButton"
+          onClick={this.middleMan}
+        />
         <input
+          id="uploadButton"
           type="file"
           name="selectedFile"
           onChange={this.onChange}
@@ -48,4 +62,4 @@ class UserForm extends Component {
     );
   }
 }
-export default UserForm;
+export default OtherForm;
