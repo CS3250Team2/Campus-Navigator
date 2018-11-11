@@ -9,9 +9,9 @@
 .NavItem a {
     color: #000;
     text-decoration: none;
+    font-weight: bold;
     height: 100%;
     padding: 1rem 2rem;
-    border-bottom: 4px solid transparent;
     box-sizing: border-box;
     display: block;
 }
@@ -21,4 +21,10 @@
 .NavItem a.active {
     color: #777;
     cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+    .NavItem {
+        height: auto;
+    }
 }

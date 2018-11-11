@@ -8,7 +8,6 @@
 import React, { Component } from "react";
 import Content from "../Content/Content";
 import classes from "./LoginReg.css";
-import axios from "axios";
 
 class RegisterPage extends Component {
     render() {
