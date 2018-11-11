@@ -12,7 +12,14 @@ import axios from "axios";
 import firebase, { auth, provider } from '../../firebase'
 
 class LoginPage extends Component {
-  constructor(props) {
+
+  ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ],
+  // Other config options...
+});
+  /*constructor(props) {
     super(props)
     this.state = {
       user: null
@@ -41,14 +48,11 @@ class LoginPage extends Component {
         this.setState({user})
       }
     })
-  }
+  }*/
     render() {
-        let authButton = this.state.user ?
-          <button onClick={this.logout}>Log Out</button> :
-          <button onClick={this.login}>Log In</button>
         return (
             <div className={classes.Login}>
-                <Content title="Login">
+                <Content title="Login">;'[??]'
                     <form>
                         <label for="username">Email:</label>
                         <input
@@ -69,6 +73,7 @@ class LoginPage extends Component {
                             className={classes.SubmitButton}
                             value="Submit"
                         />
+                      <script></script>
                     </form>
                 </Content>
             </div>
