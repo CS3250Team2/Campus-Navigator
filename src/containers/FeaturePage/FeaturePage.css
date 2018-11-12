@@ -1,0 +1,81 @@
+
+.FeaturePage {
+    background-color: rgba(255, 255, 255, 0.55);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 5rem 5% 0 5%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    position: fixed;
+    z-index: 500;
+    width: 80%;
+    border: 1px solid #ccc;
+    /*box-sizing: border-box;*/
+    width: 600px;
+    left: calc(50% - 300px);
+}
+  
+.FeaturePage h1 {
+    grid-row: 1;
+    color: #25116c;
+    font-size: 4rem;
+    margin: 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    justify-self: center;
+    /*position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+#item1 {
+    grid-row: 2;
+}
+
+#item2 {
+    grid-row: 3;
+}
+
+#item3 {
+    grid-row: 4;
+}
+
+#item4 {
+    grid-row: 5;
+}
+
+.FeaturePage h2 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    padding: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    justify-self: center;
+}
+
+a {
+    color: #791313;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Responsive Styling */
+@media screen and (min-width: 768px) {
+    .FeaturePage {
+        margin: 10rem 0;
+    }
+}
+
+/* Responsive Styling */
+@media (max-width: 575.98px) {
+    .Content {
+        margin: 3rem 0 0 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 812.98px) {
+    .Content {
+        padding: 1rem 2rem;
+    }
+}
