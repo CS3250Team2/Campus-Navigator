@@ -14,6 +14,8 @@ import Layout from "./components/Layout/Layout";
 import HomePage from "./containers/HomePage/HomePage";
 import Register from "./containers/Register/Register";
 import Login from "./containers/Login/Login";
+import ContactPage from "./containers/ContactPage/ContactPage";
+import FeaturePage from "./containers/FeaturePage/FeaturePage";
 
 class App extends Component {
     render() {
@@ -22,6 +24,8 @@ class App extends Component {
                 <Router>
                     <Layout>
                         <Route path="/" exact component={HomePage} />
+                        <Route path="/contact" exact component={ContactPage} />
+                        <Route path="/features" exact component={FeaturePage} />
                         <Route path="/register" exact component={Register} />
                         <Route path="/login" exact component={Login} />
                     </Layout>
