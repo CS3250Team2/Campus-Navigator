@@ -7,7 +7,6 @@
 
 import React, { Component } from "react";
 import Content from "../Content/Content";
-
 import classes from "./LoginReg.css";
 
 class LoginPage extends Component {
