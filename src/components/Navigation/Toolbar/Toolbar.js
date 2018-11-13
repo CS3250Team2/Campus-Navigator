@@ -6,17 +6,19 @@
  *
  */
 
-import React from 'react';
+import React from "react";
 
-import classes from './Toolbar.css';
-import NavItems from '../NavItems/NavItems';
-import RegisterNav from '../RegisterNav/RegisterNav';
+import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
+import NavItems from "../NavItems/NavItems";
+import RegisterNav from "../RegisterNav/RegisterNav";
 
-const toolbar = () => (
+import classes from "./Toolbar.css";
+
+const toolbar = props => (
     <header className={classes.Toolbar}>
-        <div className={classes.NavMenu}>&#9776;</div>
         <NavItems />
         <RegisterNav />
+        <DrawerToggle clicked={props.drawerToggleClicked} />
     </header>
 );
 

@@ -10,30 +10,31 @@
     align-items: center;
     padding: 1.5rem 1.5rem;
     box-sizing: border-box;
-    z-index: 90;
+    z-index: 100;
 }
 
 .NavMenu {
     display: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.25rem;
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
 /* Responsive Styling */
 @media (max-width: 767.98px) {
     .Toolbar {
-        left: auto;
-        right: 0;
+        justify-content: right;
     }
+
     .Toolbar ul {
         display: none;
     }
 
     .NavMenu {
         display: block;
-        font-size: 2rem;
-        text-align: center;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.281);
-        cursor: pointer;
-        margin-top: 2rem;
     }
 }
