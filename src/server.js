@@ -34,10 +34,10 @@ const port = process.env.PORT || 3000;
     const app = express();
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-    app.get("/", (req, res) => {
+    app.get("/upload", (req, res) => {
       res.sendFile(__dirname + "/index.html");
     });
-    app.post('/', upload.single('selectedFile'), (req, res) => {
+    app.post('/upload', upload.single('selectedFile'), (req, res) => {
       let summary ='';
       let counter =0;
       let times = [];
@@ -86,25 +86,8 @@ const port = process.env.PORT || 3000;
               }
 
             },
-            // onopentag: function(name, attribs){
-            //     // summary="This table lists the scheduled meeting times and assigned instructors for this class.."
-            //     if(name === "script" && attribs.type === "text/javascript"){
-            //         console.log("JS! Hooray!");
-            //     }
-            // },
-            // ontext: function(text){
-            //     console.log("-->", text);
-            // },
-            // onclosetag: function(tagname){
-            //     if(tagname === "script"){
-            //         console.log("That's it?!");
-            //     }
-            // }
         }, {decodeEntities: true});
         parser.write(data);
-        parser.end();
-        console.log("STTTTTTTTTTTTTTTTTTTTTTTAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRRRRRRRRRRTTTTTTTTTTTTTTT");
-        console.log(summary);
         console.log(building);
         console.log(times);
         console.log(date);
@@ -116,13 +99,6 @@ const port = process.env.PORT || 3000;
           console.log('Deleted filename', filename);
         })
       });
-      /*
-
-        We now have a new req.file object here. At this point the file has been saved
-        and the req.file.filename value will be the name returned by the
-        filename() function defined in the diskStorage configuration. Other form fields
-        are available here in req.body.
-      */
       res.send();
     });
 
