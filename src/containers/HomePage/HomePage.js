@@ -17,8 +17,15 @@ class HomePage extends Component {
       showMenu: false,
     }
     this.showMenu = this.showMenu.bind(this);
-  }  
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+  closeMenu(event){
+    event.preventDefault();
 
+    this.setState({
+      showMenu:false,
+    });
+  }
   showMenu(event) {
     event.preventDefault();
 
@@ -35,7 +42,7 @@ class HomePage extends Component {
                   <button onClick={this.showMenu} className={classes.dropbtn}>Choose your campus</button>
                   {  this.state.showMenu
               ? (
-                <div id="myDropdown" className={classes.dropdownContent}>
+                <div id="myDropdown" className={classes.dropdownContent} onClick={this.closeMenu}>
                   <a href="#about">Metropolitan State University of Denver</a>
 
                 </div>

@@ -17,10 +17,11 @@
     background-color: #FFFFFF;
     color: grey;
     padding: 16px;
+    padding-left: 15rem;
+    padding-right: 15rem;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width:100%;
 }
 
 .dropbtn:hover, .dropbtn:focus {
