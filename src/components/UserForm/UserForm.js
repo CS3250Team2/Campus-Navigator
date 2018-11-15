@@ -71,8 +71,9 @@ class UserForm extends Component {
                     name="selectedFile"
                     accept=".html, .htm"
                     onChange={this.onChange}
+                    className={classes.Special}
                 />
-                <button id="submitInput" type="submit" />
+                <button id="submitInput" type="submit"className={classes.Special} />
             </form>
         );
     }
