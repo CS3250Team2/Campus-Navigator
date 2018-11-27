@@ -9,7 +9,7 @@ import React, { Component } from "react";
 
 import classes from "./LandingPage.css";
 
-class HomePage extends Component {
+class LandingPage extends Component {
   constructor() {
     super();
 
