@@ -1,7 +1,12 @@
 .HomePage {
-    grid-column: 2 / 5;
+    grid-column-start: 3;
+    grid-column-end:4;
     grid-row: 2;
-    padding: 0 25%;
+    width:100%;
+    /* padding-left: 25%;
+    padding-right: 25%; */
+    /* margin-left: 25%;
+    margin-right: 25%; */
 
 }
 
@@ -10,15 +15,17 @@
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     padding: 0.5rem;
-    margin: 15rem 0 0 0;
+    margin-top: 15rem;
+    /* margin-left: 25%;
+    margin-left: 25%; */
 }
 
 .dropbtn {
     background-color: #FFFFFF;
     color: grey;
-    padding: 16px;
-    padding-left: 16.25rem;
-    padding-right: 16.25rem;
+    padding: 10px;
+    padding-left: 40%;
+    padding-right: 40%;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -31,10 +38,11 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    width:100%;
 }
 
 .dropdownContent {
-    position: absolute;
+    text-align: center;
     background-color: #f6f6f6;
     min-width: 230px;
     overflow: auto;
@@ -43,13 +51,18 @@
 }
 
 .dropdownContent a {
+    margin:center;
     color: black;
-    padding: 12px 16px;
+    padding:10px 12px;
     text-decoration: none;
     display: block;
+    padding-right:;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {
+  background-color: #ddd;
+
+}
 
 .show {display: block;}
 

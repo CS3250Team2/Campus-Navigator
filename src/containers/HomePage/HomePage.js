@@ -20,17 +20,18 @@ class HomePage extends Component {
     this.closeMenu = this.closeMenu.bind(this);
   }
   closeMenu(event){
-    event.preventDefault();
+    if (!this.dropdownMenu.contains(event.target)) {
 
-    this.setState({
-      showMenu:false,
-    });
+      this.setState({ showMenu: false }, () => {
+        document.removeEventListener('click', this.closeMenu);
+      });
+    }
   }
   showMenu(event) {
     event.preventDefault();
 
-    this.setState({
-      showMenu: true,
+    this.setState({ showMenu: true }, () => {
+      document.addEventListener('click', this.closeMenu);
     });
   }
     render() {
@@ -42,8 +43,11 @@ class HomePage extends Component {
                   <button onClick={this.showMenu} className={classes.dropbtn}>Choose your campus</button>
                   {  this.state.showMenu
               ? (
-                <div id="myDropdown" className={classes.dropdownContent} onClick={this.closeMenu}>
-                  <a href="#about">Metropolitan State University of Denver</a>
+                <div id="myDropdown" className={classes.dropdownContent} onClick={this.closeMenu}ref={(element) => {
+                  this.dropdownMenu = element;
+                }}>
+                  <a href="#about">Metropolitan State University of Denver at Auraria Campus</a>
+                  {/*<a href="#about">Heyo this is dummy tex that is as long as possible to test if the padding is uniform lalalalalalalalalalalalalalalalalal </a>*/}
 
                 </div>
               )
