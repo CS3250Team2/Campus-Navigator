@@ -1,4 +1,4 @@
-/* Component Name: HomePage
+/* Component Name: LandingPage
  * Function: Content of the landing page
  *
  * Props Received: None
@@ -7,7 +7,7 @@
 
 import React, { Component } from "react";
 
-import classes from "./HomePage.css";
+import classes from "./LandingPage.css";
 
 class HomePage extends Component {
   constructor() {
@@ -63,4 +63,4 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage;
+export default LandingPage;

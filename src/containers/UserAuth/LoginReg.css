@@ -8,25 +8,18 @@ form {
     align-self: center;
 }
 
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    left: 0;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
 form input {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: none;
     border-radius: 5px;
-    width: 100%;
+    width: 85%;
+    margin-left: 7.5%;
     margin-bottom: 1rem;
     height: 2rem;
     font-size: 1.2rem;
 }
 
-form .SubmitButton {
+.SubmitButton {
     margin-top: 0.5rem;
     margin-left: 60%;
     width: 30%;
@@ -34,6 +27,28 @@ form .SubmitButton {
     background-color: #25116c;
     color: #ffffff;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.SubmitButton:disabled {
+    opacity: 0.75;
+    cursor: default;
+}
+
+.ErrorMessage {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #791313;
+}
+
+.SignUpLink, .SignInLink {
+    text-align: center;
+    font-weight: bold;
+}
+
+.SignUpLink a, .SignInLink a {
+    text-decoration: none;
+    color: #25116c;
 }
 
 /* Responsive Styling */

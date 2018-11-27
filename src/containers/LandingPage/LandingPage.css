@@ -84,7 +84,7 @@
 }
 
 @media (max-width: 812.98px) {
-    .HomePage {
+    .LandingPage {
       grid-column: 2 / 3;
       padding: 0;
     }
