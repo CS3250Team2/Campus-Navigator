@@ -40,7 +40,7 @@ class HomePage extends Component {
           <div className={classes.HomePage}>
             <div className={classes.Content}>
                 <div className={classes.dropdown}>
-                  <button onClick={this.showMenu} className={classes.dropbtn}>Choose your campus</button>
+                  <button onClick={this.showMenu} className={classes.dropbtn}>Choose Your Campus</button>
                   {  this.state.showMenu
               ? (
                 <div id="myDropdown" className={classes.dropdownContent} onClick={this.closeMenu}ref={(element) => {
