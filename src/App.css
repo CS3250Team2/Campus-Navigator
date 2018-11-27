@@ -1,6 +1,6 @@
 .App {
     background-color: #999;
-    background-image: url('http://growhousegaming.com/assets/imgs/CampusNav/campus.jpg');
+    background-image: url('./assets/images/campus.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
