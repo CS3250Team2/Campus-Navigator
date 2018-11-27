@@ -1,14 +1,14 @@
 .App {
     background-color: #999;
-    background-image: url('../src/assets/images/background_image.jpg');
+    background-image: url('../src/assets/images/IMG_3598.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     height: 100vh;
     display: grid;
-    grid-template-columns: 5% 30% 30% 30% 5%;
-    grid-template-rows: 3.5rem auto;
+    grid-template-columns: 5% 25% 10% 20% 10% 25% 5%;
+    grid-template-rows: 3.5rem 35%;
     font-family: Arial, sans-serif, Helvetica;
 }
 
