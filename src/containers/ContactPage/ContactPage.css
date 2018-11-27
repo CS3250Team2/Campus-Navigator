@@ -1,10 +1,11 @@
 .ContactPage {
-    grid-column: 1 / 6;
+    grid-column-start: 3;
+    grid-column-end: 6;
     grid-row: 2;
     background-color: rgba(196, 165, 165, 0.55);
     border-radius: 10px;
-    padding: 1rem;
-    margin: 8rem 30% 15% 15%;
+
+    /*margin: 8rem 30% 15% 15%;*/
 }
 
 .Content h1 {
