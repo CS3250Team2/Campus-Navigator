@@ -6,14 +6,13 @@
  *
  */
 
-import React from "react";
+import React from 'react';
 
-import Aux from "../../../hoc/Auxiliary";
-import Backdrop from "../../UI/Backdrop/Backdrop";
-import NavItems from "../NavItems/NavItems";
-import RegisterNav from "../RegisterNav/RegisterNav";
+import Aux from '../../../hoc/Auxiliary';
+import Backdrop from '../../UI/Backdrop/Backdrop';
+import NavItems from '../NavItems/NavItems';
 
-import classes from "./SideDrawer.css";
+import classes from './SideDrawer.css';
 
 const sideDrawer = props => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
@@ -22,17 +21,14 @@ const sideDrawer = props => {
     }
     return (
         <Aux>
-            <Backdrop show={props.open} clicked={props.closed}/>
+            <Backdrop show={props.open} clicked={props.closed} />
             <div className={attachedClasses.join(' ')}>
-                <div className={classes.LogoNav}>
-                    <img
-                        className={classes.DrawerLogo}
-                        src={require("../../../assets/images/logo02.png")}
-                        alt="Campus Navigator Logo"
-                    />
-                    <NavItems />
-                </div>
-                <RegisterNav />
+                <img
+                    className={classes.DrawerLogo}
+                    src={require('../../../assets/images/logo02.png')}
+                    alt="Campus Navigator Logo"
+                />
+                <NavItems authUser={props.authUser}/>
             </div>
         </Aux>
     );

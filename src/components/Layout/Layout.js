@@ -5,15 +5,15 @@
  *
  */
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Aux from "../../hoc/Auxiliary";
-import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
-import Toolbar from "../Navigation/Toolbar/Toolbar";
+import Aux from '../../hoc/Auxiliary';
+import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Toolbar from '../Navigation/Toolbar/Toolbar';
 
 class Layout extends Component {
     state = {
-        showDrawer: false
+        showDrawer: false,
     };
 
     closeDrawerHandler = () => {
@@ -29,8 +29,9 @@ class Layout extends Component {
     render() {
         return (
             <Aux>
-                <Toolbar drawerToggleClicked={this.toggleDrawerHandler} />
+                <Toolbar authUser={this.props.authUser} drawerToggleClicked={this.toggleDrawerHandler} />
                 <SideDrawer
+                    authUser={this.props.authUser}
                     open={this.state.showDrawer}
                     closed={this.closeDrawerHandler}
                 />

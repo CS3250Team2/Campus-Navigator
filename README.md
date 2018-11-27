@@ -5,10 +5,11 @@ A web application designed to orient students to the MSU Denver campus.
 ## Built With
 
 * The MERN Stack
-  * [MongoDB](https://www.mongodb.com/) - Our database of choice.
-  * [Express](https://expressjs.com/) - For setting up our server framework and creating an API (if necessary).
+  * ~~[MongoDB](https://www.mongodb.com/) - Our database of choice.~~
+  * ~~[Express](https://expressjs.com/) - For setting up our server framework and creating an API (if necessary).~~
   * [React](https://reactjs.org/) - The front-end web framework used.
   * [Node.js](https://nodejs.org/) - A cross-platform server environment and runtime.
+  * [Firebase](https://firebase.google.com/) - A free BaaS by Google
 
 ## Version Control
 We use [Git](https://git-scm.com/) and [GitHub](https://github.com/) for version control.

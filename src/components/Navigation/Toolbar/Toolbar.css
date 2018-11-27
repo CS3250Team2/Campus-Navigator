@@ -6,22 +6,11 @@
     left: 0;
     background-color: transparent;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem;
+    padding-bottom: 0;
     box-sizing: border-box;
     z-index: 100;
-}
-
-.NavMenu {
-    display: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 0.25rem;
-    margin-top: 2rem;
-    cursor: pointer;
 }
 
 /* Responsive Styling */
