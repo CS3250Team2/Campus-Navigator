@@ -1,0 +1,91 @@
+.HomePage {
+    grid-column-start: 4;
+    grid-column-end:4;
+    grid-row: 2;
+    /* padding-left: 25%;
+    padding-right: 25%; */
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+
+.Content {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    border-radius: 10px;
+    padding: 0.5rem;
+
+    margin-top: 15rem;
+    /* margin-left: 25%;
+    margin-left: 25%; */
+}
+
+.dropbtn {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #89cff0;
+    padding: 10px;
+    padding-left: 30%;
+    padding-right: 30%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #FFFFFF;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width:100%;
+}
+
+.dropdownContent {
+    text-align: center;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdownContent a {
+    margin:center;
+    color: black;
+    padding:10px 12px;
+
+    text-decoration: none;
+    display: block;
+    padding-right:;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+
+}
+
+.show {display: block;}
+
+/* Responsive Styling */
+@media (max-width: 575.98px) {
+    .Content {
+        margin: 13rem 0 0 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 812.98px) {
+    .Content {
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 812.98px) {
+    .LandingPage {
+      grid-column: 2 / 3;
+      padding: 0;
+    }
+}

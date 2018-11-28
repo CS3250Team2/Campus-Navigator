@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import classes from "./App.css";
 import Layout from "./components/Layout/Layout";
-import HomePage from "./containers/HomePage/HomePage";
+import LandingPage from "./containers/LandingPage/LandingPage";
 import Register from "./containers/Register/Register";
 import Login from "./containers/Login/Login";
 import ContactPage from "./containers/ContactPage/ContactPage";
@@ -24,7 +24,7 @@ class App extends Component {
             <div className={classes.App}>
                 <Router>
                     <Layout>
-                        <Route path="/" exact component={HomePage} />
+                        <Route path="/" exact component={LandingPage} />
                         <Route path="/contact" exact component={ContactPage} />
                         <Route path="/features" exact component={FeaturePage} />
                         <Route path="/event" exact component={EventPage} />
