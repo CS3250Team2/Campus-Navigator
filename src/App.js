@@ -17,6 +17,7 @@ import Login from "./containers/Login/Login";
 import ContactPage from "./containers/ContactPage/ContactPage";
 import FeaturePage from "./containers/FeaturePage/FeaturePage";
 import EventPage from "./containers/EventPage/EventPage";
+import * as routes from './constants/routes';
 
 class App extends Component {
     render() {
@@ -24,12 +25,12 @@ class App extends Component {
             <div className={classes.App}>
                 <Router>
                     <Layout>
-                        <Route path="/" exact component={LandingPage} />
-                        <Route path="/contact" exact component={ContactPage} />
-                        <Route path="/features" exact component={FeaturePage} />
-                        <Route path="/event" exact component={EventPage} />
-                        <Route path="/register" exact component={Register} />
-                        <Route path="/login" exact component={Login} />
+                        <Route path={routes.LANDING}  exact component={LandingPage} />
+                        <Route path={routes.CONTACT} component={ContactPage} />
+                        <Route path={routes.FEATURES} component={FeaturePage} />
+                        <Route path={routes.EVENT} component={EventPage} />
+                        <Route path={routes.SIGN_UP} component={Register} />
+                        <Route path={routes.SIGN_IN} component={Login} />
                     </Layout>
                 </Router>
             </div>
