@@ -7,7 +7,8 @@
 }
 
 .NavItem a {
-    color: #000;
+    color: white;
+    text-shadow: 1px 1px 0.5px #37a2b2;
     text-decoration: none;
     height: 100%;
     padding: 1rem 2rem;

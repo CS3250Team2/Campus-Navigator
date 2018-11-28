@@ -16,6 +16,7 @@ const navItems = () => (
 
         <NavItem link="/contact">CONTACT</NavItem>
         <NavItem link='/features'>FEATURES</NavItem>
+        <NavItem link='/event'>EVENTS</NavItem>
     </ul>
 );
 
