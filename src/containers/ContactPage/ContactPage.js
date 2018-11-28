@@ -21,7 +21,7 @@ class ContactPage extends Component {
                 <h3>*CLICK ON THE LINK BELOW</h3>
               </div>
               <div className={classes.Content}>
-                <a href="mailto:OGteam2@something.com">EMAIL US</a>
+                <a href="https://github.com/CS3250Team2/Campus-Navigator/issues">CONTACT US</a>
               </div>
             </div>
         );
