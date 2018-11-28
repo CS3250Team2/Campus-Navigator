@@ -12,7 +12,7 @@ class FeaturePage extends Component {
     render() {
         return(
             <div className={classes.FeaturePage}>
-              <h1>Explore</h1>
+              <h1>EXPLORE</h1>
               <div id="grid">
                 <div id="item1"><h2><a href="http://localhost:3000/upload">Campus Navigator</a></h2></div>
                 <div id="item2"><h2><a href="https://msudenver.edu/maps/">Campus Map</a></h2></div>

@@ -1,7 +1,5 @@
 
 .FeaturePage {
-    background-color: rgba(255, 255, 255, 0.55);
-    border-radius: 10px;
     padding: 1rem;
     margin: 5rem 5% 0 5%;
     display: grid;
@@ -9,7 +7,6 @@
     position: fixed;
     z-index: 500;
     width: 80%;
-    border: 1px solid #ccc;
     /*box-sizing: border-box;*/
     width: 600px;
     left: calc(50% - 300px);
@@ -21,7 +18,7 @@
     font-size: 4rem;
     margin: 1rem 0;
     text-align: center;
-    text-transform: uppercase;
+    text-shadow: 2px 2px 1px #000033;
     justify-self: center;
     /*position: fixed;
     top: 30%;
@@ -51,6 +48,7 @@
     padding: 4px;
     text-align: center;
     text-transform: uppercase;
+    text-shadow: 1px 1px 0.5px #4d0000;
     justify-self: center;
 }
 

@@ -17,6 +17,19 @@ class HomePage extends Component {
                 <div className={classes.Content}>
                   <div className="image">
                     <img src={require('../../assets/images/Group 40.png')} className='center' alt='campus bar'/>
+                ? (
+                    <div id="myDropdown" className={classes.dropdownContent} onClick={this.closeMenu}ref={(element) => {
+                        this.dropdownMenu = element;
+                    }}>
+                      <a href="#about">Metropolitan State University of Denver at Auraria Campus</a>
+                      {/*<a href="#about">Heyo this is dummy tex that is as long as possible to test if the padding is uniform lalalalalalalalalalalalalalalalalal </a>*/}
+
+                    </div>
+                  )
+                : (
+                    null
+                  )
+                  }
                   </div>
                 </div>
             </div>
