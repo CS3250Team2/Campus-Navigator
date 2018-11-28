@@ -1,10 +1,6 @@
 .Login, .Register {
     grid-column-start: 3;
-<<<<<<< HEAD
     grid-column-end:6;
-=======
-    grid-column-end:5;
->>>>>>> 347ce831099521e51553f2cc3ec730027672971e
     grid-row: 2;
 }
 
