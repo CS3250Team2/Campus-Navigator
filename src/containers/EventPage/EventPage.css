@@ -1,0 +1,31 @@
+.EventPage {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 2;
+
+    /*margin: 8rem 30% 15% 15%;*/
+}
+
+.Content {
+  max-width: auto;
+}
+
+h1 {
+  color: white;
+  display: inline-block;
+  font-size: 3em;
+  text-shadow: 1px 1px 0.5px #37a2b2;
+  margin-top: 5%;
+  margin-left: 5%;
+  max-width: auto;
+  font-weight: bold;
+}
+
+
+/* Responsive Styling */
+@media (max-width: 812.98px) {
+    .ScheduleUpload {
+        width: 100%;
+        margin-left: 0;
+    }
+}
