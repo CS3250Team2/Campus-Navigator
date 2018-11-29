@@ -8,6 +8,11 @@
 import React, { Component } from "react";
 
 import classes from "./LandingPage.css";
+import * as routes from '../../constants/routes';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ScheduleUpload from '../ScheduleUpload/ScheduleUpload';
+import NavItem from '../../components/Navigation/NavItems/NavItem/NavItem';
+
 
 class LandingPage extends Component {
   constructor() {
@@ -46,7 +51,9 @@ class LandingPage extends Component {
                 <div id="myDropdown" className={classes.dropdownContent} onClick={this.closeMenu}ref={(element) => {
                   this.dropdownMenu = element;
                 }}>
-                  <a href="#about">Metropolitan State University of Denver at Auraria Campus</a>
+
+                  <Route path={routes.HOME} component={ScheduleUpload} />
+                  <NavItem link={routes.HOME}><a>Metropolitan State University of Denver at Auraria Campus</a></NavItem>
                   {/*<a href="#about">Heyo this is dummy tex that is as long as possible to test if the padding is uniform lalalalalalalalalalalalalalalalalal </a>*/}
 
                 </div>
