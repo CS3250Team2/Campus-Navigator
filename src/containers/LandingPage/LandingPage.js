@@ -25,12 +25,15 @@ class LandingPage extends Component {
     this.closeMenu = this.closeMenu.bind(this);
   }
   closeMenu(event){
-    if (!this.dropdownMenu.contains(event.target)) {
+    if(event.target!=null && this.dropdownMenu!=null){
+      if (!this.dropdownMenu.contains(event.target)) {
 
-      this.setState({ showMenu: false }, () => {
-        document.removeEventListener('click', this.closeMenu);
-      });
+        this.setState({ showMenu: false }, () => {
+          document.removeEventListener('click', this.closeMenu);
+        });
+      }
     }
+
   }
   showMenu(event) {
     event.preventDefault();
