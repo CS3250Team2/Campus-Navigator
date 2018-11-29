@@ -48,7 +48,7 @@ class LandingPage extends Component {
           <div className={classes.HomePage}>
             <div className={classes.Content}>
                 <div className={classes.dropdown}>
-                  <button onClick={this.showMenu} className={classes.dropbtn}>Choose Your Campus</button>
+                  <button onClick={this.showMenu} className={classes.dropbtn}>CHOOSE YOUR CAMPUS</button>
                   {  this.state.showMenu
               ? (
                 <div id="myDropdown" className={classes.dropdownContent} onClick={this.closeMenu}ref={(element) => {
