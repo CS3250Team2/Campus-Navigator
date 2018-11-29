@@ -48,6 +48,16 @@ class LandingPage extends Component {
           <div className={classes.HomePage}>
             <div className={classes.Content}>
                 <div className={classes.dropdown}>
+                  <div className={classes.ImageContainer}>
+                    <img
+                        className={classes.Logo}
+                        src={require("../../assets/images/logo03.png")}
+                        alt="Campus Navigator Logo"
+                    />
+                  </div>
+                  {/*This is a conditionally rendering drop down menu based on REACT logic. When a user clicks outside of the button the "ShowMenu" variable gets set to false
+                  This is basically the dichotomy of showing or not showing the dropdown. If the showmenu is true, the first part of the stuff is rendered, otherwise null
+                   is rendered*/}
                   <button onClick={this.showMenu} className={classes.dropbtn}>CHOOSE YOUR CAMPUS</button>
                   {  this.state.showMenu
               ? (
