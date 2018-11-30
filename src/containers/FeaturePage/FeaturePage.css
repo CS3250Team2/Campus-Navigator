@@ -1,24 +1,19 @@
 
 .FeaturePage {
-    padding: 1rem;
-    margin: 5rem 5% 0 5%;
-    display: grid;
-    grid-template-rows: auto auto auto auto auto;
-    position: fixed;
-    z-index: 500;
-    width: 80%;
-    /*box-sizing: border-box;*/
-    width: 600px;
-    left: calc(50% - 300px);
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row: 3 / span 3;
 }
 
 .FeaturePage h1 {
     grid-row: 1;
-    color: #25116c;
+    color: white;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
     font-size: 4rem;
     margin: 1rem 0;
     text-align: center;
-    text-shadow: 2px 2px 1px #000033;
+    text-shadow: 1px 1px 0.5px #37a2b2;
     justify-self: center;
     /*position: fixed;
     top: 30%;
@@ -43,6 +38,8 @@
 }
 
 .FeaturePage h2 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
     font-size: 2.5rem;
     margin: 1rem 0;
     padding: 4px;
