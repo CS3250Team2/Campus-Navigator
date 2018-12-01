@@ -6,6 +6,7 @@
  */
 
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 import classes from "./LandingPage.css";
 import * as routes from '../../constants/routes';
@@ -66,7 +67,7 @@ class LandingPage extends Component {
                 }}>
 
                   <Route path={routes.HOME} component={ScheduleUpload} />
-                  <NavItem link={routes.HOME}><a>Metropolitan State University of Denver at Auraria Campus</a></NavItem>
+                    <Link to={routes.HOME}><a>Metropolitan State University of Denver at Auraria Campus</a></Link>
                   {/*<a href="#about">Heyo this is dummy tex that is as long as possible to test if the padding is uniform lalalalalalalalalalalalalalalalalal </a>*/}
 
                 </div>
@@ -75,7 +76,6 @@ class LandingPage extends Component {
                 null
               )
               }
-
                 </div>
             </div>
           </div>

@@ -46,6 +46,7 @@ class App extends Component {
                         <Route path={routes.FEATURES} component={FeaturePage} />
                         <Route path={routes.SIGN_UP} component={Register} />
                         <Route path={routes.SIGN_IN} component={Login} />
+                        <Route path={routes.HOME} component={ScheduleUpload} />                        
                     </Layout>
                 </Router>
             </div>
