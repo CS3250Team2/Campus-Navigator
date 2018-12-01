@@ -59,14 +59,13 @@
     background-color: #f6f6f6;
     border: 1px solid rgba(111, 111, 111, 0.87);
     margin:0 5% 0 5%;
-    width:90%;
     border-radius: 10px;
     min-width: 250px;
     padding:0;
     overflow: auto;
     z-index: 1;
 }
-.dropdownContent NavItem a{
+.dropdownContent Link a{
   padding:0;
   max-width: 312.7px;
 }
@@ -74,6 +73,7 @@
     color: black;
     font-size: .75rem;
     padding: .25rem;
+    font-weight: bold;
     text-decoration: none;
     display: block;
     color: #791313;
@@ -85,7 +85,6 @@
 
 .dropdown a:hover {
   background-color: #ddd;
-
 }
 
 .show {display: block;}
