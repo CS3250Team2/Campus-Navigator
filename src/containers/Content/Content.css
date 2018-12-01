@@ -1,10 +1,16 @@
 .Content {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 1rem;
     margin: 5rem 5% 0 5%;
     display: grid;
     grid-template-rows: auto auto auto;
+    font-size: .75rem;
+    padding: .25rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    color: #791313;
 }
 
 .Logo {
@@ -19,8 +25,8 @@
     color: #791313;
     font-weight: bold;
     margin: 1rem 0;
-    align-self: center;
-    justify-self: center;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 /* Responsive Styling */
