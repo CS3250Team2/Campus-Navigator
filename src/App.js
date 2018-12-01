@@ -44,9 +44,10 @@ class App extends Component {
                         <Route path={routes.LANDING}  exact component={LandingPage} />
                         <Route path={routes.CONTACT} component={ContactPage} />
                         <Route path={routes.FEATURES} component={FeaturePage} />
+                        <Route path={routes.EVENT} component={EventPage} />
                         <Route path={routes.SIGN_UP} component={Register} />
                         <Route path={routes.SIGN_IN} component={Login} />
-                        <Route path={routes.HOME} component={ScheduleUpload} />                        
+                        <Route path={routes.HOME} component={ScheduleUpload} />
                     </Layout>
                 </Router>
             </div>

@@ -7,17 +7,25 @@
 
 import React, {Component} from 'react';
 import classes from './FeaturePage.css';
+import ScheduleUpload from '../ScheduleUpload/ScheduleUpload';
+import { Link } from 'react-router-dom';
+import * as routes from '../../constants/routes';
 
 class FeaturePage extends Component {
     render() {
         return(
             <div className={classes.FeaturePage}>
-              <h1>EXPLORE</h1>
               <div id="grid">
-                <div id="item1"><h2><a href="http://localhost:3000/upload">Campus Navigator</a></h2></div>
-                <div id="item2"><h2><a href="https://msudenver.edu/maps/">Campus Map</a></h2></div>
-                <div id="item3"><h2><a href="http://localhost:3000/features">Eat On Campus</a></h2></div>
-                <div id="item4"><h2><a href="http://localhost:3000/contact">Contact Us</a></h2></div>
+                <div className={classes.Content}>
+                  <img
+                      className={classes.Logo}
+                      src={require("../../assets/images/logo03.png")}
+                      alt="Campus Navigator Logo"
+                  />
+                  <h1>CLICK THE LINKS BELOW TO CHECK OUT OTHER FEATURES</h1>
+                  <Link to={routes.HOME}><p>Schedule Planner</p></Link>
+                  <Link to={routes.EVENT}><p>Events</p></Link>
+                </div>
               </div>
             </div>
         );

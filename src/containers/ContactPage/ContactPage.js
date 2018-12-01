@@ -15,13 +15,13 @@ class ContactPage extends Component {
         return (
             <div className={classes.ContactPage}>
               <div className={classes.Content}>
-                <h1>SEND US A MESSAGE</h1>
-              </div>
-              <div className={classes.Content}>
-                <h2>*CLICK ON THE LINK BELOW</h2>
-              </div>
-              <div className={classes.Content}>
-                <a href="https://github.com/CS3250Team2/Campus-Navigator/issues">CONTACT US</a>
+                <img
+                    className={classes.Logo}
+                    src={require("../../assets/images/logo03.png")}
+                    alt="Campus Navigator Logo"
+                />
+                <h1>ANY ISSUES OR REQUESTS FOR FUTURE ISSUES?</h1>
+                <a href="https://github.com/CS3250Team2/Campus-Navigator/issues">CLICK HERE</a>
               </div>
             </div>
         );
