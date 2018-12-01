@@ -13,11 +13,12 @@
              <div className={classes.EventPage}>
                <div className={classes.Content}>
                   <h1>EVENTS</h1>
+                  
                </div>
              </div>
          );
      }
-     
+
  }
 
  export default EventPage;

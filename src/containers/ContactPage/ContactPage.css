@@ -2,35 +2,40 @@
     grid-column-start: 3;
     grid-column-end: 6;
     grid-row: 3/ span 3;
+    font-weight: bold;
+
 
     /*margin: 8rem 30% 15% 15%;*/
 }
-
+.Content {
+    background-color: rgba(255, 255, 255, 0.80);
+    border-radius: 10px;
+    padding: 1rem;
+    margin:0 5% 0 5%;
+    width:90%;
+}
+.ContactPage img{
+  width:100%;
+  margin-bottom: 1.5rem;
+}
 .Content h1 {
-    display: inline-block;
-    font-size: 4em;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-    color: white;
-    text-shadow: 1px 1px 0.5px #37a2b2;
-    margin-top: 5%;
-    margin-left: 5%;
-    max-width: auto;
-    font-weight: bold;
+  color: #25116c;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-align: center;
 }
 
 .Content h2 {
-    display: inline-inline-block;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    color: white;
-    text-shadow: 1px 1px 0.5px #37a2b2;
-    margin-left: 5%;
-    margin-bottom: auto;
+  color: #791313;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
 }
 
 .Content a {
+<<<<<<< HEAD
     color: #1e30b2;
 <<<<<<< HEAD
     display: inline-block;
@@ -44,6 +49,13 @@
     text-shadow: 1px 1px 0.5px #101a63;
     font-size: 3em;
     margin-left: 5%;
+=======
+  color: #791313;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+>>>>>>> 99182cf94e278e3541393213dddace28d4b9a466
 }
 
 /* Responsive Styling */
