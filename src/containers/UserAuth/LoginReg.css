@@ -1,0 +1,62 @@
+.Login, .Register {
+    grid-column-start: 3;
+    grid-column-end:6;
+    grid-row: 2;
+}
+
+form {
+    grid-row: 3;
+    align-self: center;
+}
+
+form input {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    border-radius: 5px;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-bottom: 1rem;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+.SubmitButton {
+    margin-top: 0.5rem;
+    margin-left: 60%;
+    width: 30%;
+    border-radius: 4px;
+    background-color: #25116c;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.SubmitButton:disabled {
+    opacity: 0.75;
+    cursor: default;
+}
+
+.ErrorMessage {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #791313;
+}
+
+.SignUpLink, .SignInLink {
+    text-align: center;
+    font-weight: bold;
+}
+
+.SignUpLink a, .SignInLink a {
+    text-decoration: none;
+    color: #25116c;
+}
+
+/* Responsive Styling */
+@media (max-width: 812.98px) {
+    .Login, .Register {
+        grid-column: 2 / 3;
+        width: 100%;
+        margin-left: 0;
+    }
+}

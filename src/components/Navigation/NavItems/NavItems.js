@@ -1,22 +1,46 @@
 /* Component Name: NavItems
  * Function: Container for primary navigation (home, contact, etc.)
  *
- * Props Received: None
+ * Props Received: authUser - Authenticated user
  *
  */
 
 import React from 'react';
-import classes from './NavItems.css';
+import Aux from '../../../hoc/Auxiliary';
 import NavItem from './NavItem/NavItem';
+import SignOutButton from './SignOutButton/SignOutButton';
 
-const navItems = () => (
+import classes from './NavItems.css';
+import * as routes from '../../../constants/routes';
+
+const navItems = ({authUser}) => <Aux>{authUser ? <NavAuth /> : <NavNoAuth />}</Aux>;
+
+const NavAuth = () => (
     <ul className={classes.NavItems}>
-        <NavItem link="/">HOME</NavItem>
+        <div className={classes.Navigation}>
+            <NavItem link={routes.HOME}>HOME</NavItem>
+            <NavItem link={routes.FEATURES}>FEATURES</NavItem>
+            <NavItem link={routes.CONTACT}>CONTACT</NavItem>
+        </div>
+        <div className={classes.UserAuth}>
+            <NavItem link={routes.ACCOUNT}>ACCOUNT</NavItem>
+            <SignOutButton />
+        </div>
+    </ul>
+);
 
-
-        <NavItem link="/contact">CONTACT</NavItem>
-        <NavItem link='/features'>FEATURES</NavItem>
-        <NavItem link='/event'>EVENTS</NavItem>
+        
+const NavNoAuth = () => (
+    <ul className={classes.NavItems}>
+        <div className={classes.Navigation}>
+            <NavItem link={routes.LANDING}>HOME</NavItem>
+            <NavItem link={routes.FEATURES}>FEATURES</NavItem>
+            <NavItem link={routes.CONTACT}>CONTACT</NavItem>
+        </div>
+        <div className={classes.UserAuth}>
+            <NavItem link={routes.SIGN_UP}>SIGN UP</NavItem>
+            <NavItem link={routes.SIGN_IN}>LOGIN</NavItem>
+        </div>
     </ul>
 );
 

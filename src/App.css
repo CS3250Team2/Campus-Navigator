@@ -1,19 +1,19 @@
 .App {
     background-color: #999;
-    background-image: url('../src/assets/images/IMG_3598.jpg');
+    background-image: url('./assets/images/campus.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     height: 100vh;
     display: grid;
-    grid-template-columns: 5% 25% 10% 20% 10% 25% 5%;
-    grid-template-rows: 5rem 40%;
-    font-family: Arial, sans-serif, Helvetica;
+    grid-template-columns: 5% 30% 5% 20% 5% 30% 5%;
+    grid-template-rows: 3.5rem auto;
+    font-family: Arial, sans-serif;
 }
 
 /* Responsive Styling */
-@media (max-width: 767.98px) {
+@media (max-width: 812.98px) {
     .App {
         grid-template-columns: 5% auto 5%;
         background-position: right;

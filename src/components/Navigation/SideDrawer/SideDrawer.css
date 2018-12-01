@@ -1,0 +1,34 @@
+.SideDrawer {
+    height: 100vh;
+    max-width: 70%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(170, 170, 170, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    transition: transform 0.3s ease-out;
+    z-index: 101;
+}
+
+.DrawerLogo {
+    max-height: 15vh;
+    padding: 1rem;
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(-100%);
+}
+
+@media (min-width: 768px) {
+    .SideDrawer {
+        display: none;
+    }
+}
