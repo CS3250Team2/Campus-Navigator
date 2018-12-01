@@ -1,0 +1,49 @@
+.ContactPage {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row: 3/ span 3;
+
+    /*margin: 8rem 30% 15% 15%;*/
+}
+
+.Content h1 {
+    display: inline-block;
+    font-size: 4em;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    color: white;
+    text-shadow: 1px 1px 0.5px #37a2b2;
+    margin-top: 5%;
+    margin-left: 5%;
+    max-width: auto;
+    font-weight: bold;
+}
+
+.Content h2 {
+    display: inline-inline-block;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: white;
+    text-shadow: 1px 1px 0.5px #37a2b2;
+    margin-left: 5%;
+    margin-bottom: auto;
+}
+
+.Content a {
+    color: #1e30b2;
+    display: inline-block;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    text-shadow: 1px 1px 0.5px #101a63;
+    font-size: 3em;
+    margin-left: 5%;
+}
+
+/* Responsive Styling */
+@media (max-width: 812.98px) {
+    .ScheduleUpload {
+        width: 100%;
+        margin-left: 0;
+    }
+}
