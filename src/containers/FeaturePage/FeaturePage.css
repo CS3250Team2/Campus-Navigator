@@ -1,8 +1,16 @@
 
 .FeaturePage {
+    /*padding: 1rem;*/
+    /*margin: 5rem 5% 0 5%;
+    display: grid;*/
     grid-column-start: 3;
     grid-column-end: 6;
     grid-row: 3 / span 3;
+    /*z-index: 500;
+    width: 80%;
+    /*box-sizing: border-box;*/
+    /*width: 600px;
+    left: calc(50% - 300px);*/
 }
 
 .FeaturePage h1 {
@@ -55,22 +63,10 @@ a {
     text-transform: uppercase;
 }
 
-/* Responsive Styling */
-@media screen and (min-width: 768px) {
-    .FeaturePage {
-        margin: 10rem 0;
-    }
-}
-
-/* Responsive Styling */
-@media (max-width: 575.98px) {
-    .Content {
-        margin: 3rem 0 0 0;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 812.98px) {
-    .Content {
-        padding: 1rem 2rem;
-    }
-}
+ /* Responsive Styling */
+ @media (max-width: 812.98px) {
+     .ScheduleUpload {
+         width: 100%;
+         margin-left: 0;
+     }
+ }
