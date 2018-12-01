@@ -29,6 +29,7 @@ const NavAuth = () => (
     </ul>
 );
 
+        
 const NavNoAuth = () => (
     <ul className={classes.NavItems}>
         <div className={classes.Navigation}>
