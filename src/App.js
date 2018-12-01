@@ -9,21 +9,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import LandingPage from './containers/LandingPage/LandingPage';
 import ScheduleUpload from './containers/ScheduleUpload/ScheduleUpload';
-import Register from './containers/UserAuth/Register';
 import Login from './containers/UserAuth/Login';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { firebase } from './firebase';
-
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-//import './bootstrap-4.1.3-dist/bootstrap.min.css'
-
 import classes from "./App.css";
-import Layout from "./components/Layout/Layout";
-import LandingPage from "./containers/LandingPage/LandingPage";
-import Register from "./containers/Register/Register";
-import Login from "./containers/Login/Login";
+import Register from "./containers/UserAuth/Register";
 import ContactPage from "./containers/ContactPage/ContactPage";
 import FeaturePage from "./containers/FeaturePage/FeaturePage";
 import EventPage from "./containers/EventPage/EventPage";
@@ -53,7 +44,6 @@ class App extends Component {
                         <Route path={routes.LANDING}  exact component={LandingPage} />
                         <Route path={routes.CONTACT} component={ContactPage} />
                         <Route path={routes.FEATURES} component={FeaturePage} />
-                        <Route path={routes.EVENT} component={EventPage} />
                         <Route path={routes.SIGN_UP} component={Register} />
                         <Route path={routes.SIGN_IN} component={Login} />
                     </Layout>
