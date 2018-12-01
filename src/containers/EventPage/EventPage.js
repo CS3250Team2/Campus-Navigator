@@ -17,6 +17,7 @@
              </div>
          );
      }
+     
  }
 
  export default EventPage;
