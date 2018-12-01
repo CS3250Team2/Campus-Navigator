@@ -6,3 +6,4 @@ export const ACCOUNT = '/account';
 export const PASS_FORGET = '/forgot-pass';
 export const FEATURES = '/features';
 export const CONTACT = '/contact';
+export const EVENT = '/event';

@@ -7,8 +7,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
-
 .Navigation, .UserAuth {
     display: flex;
     align-items: center;

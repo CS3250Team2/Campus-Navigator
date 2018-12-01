@@ -7,7 +7,8 @@
 }
 
 .NavItem a {
-    color: #000;
+    color: white;
+    text-shadow: 1px 1px 0.5px #37a2b2;
     text-decoration: none;
     font-weight: bold;
     height: 100%;
@@ -23,7 +24,6 @@
     color: #777;
     cursor: pointer;
 }
-
 @media (max-width: 767.98px) {
     .NavItem {
         height: auto;
