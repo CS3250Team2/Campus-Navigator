@@ -66,7 +66,7 @@ class LandingPage extends Component {
                   this.dropdownMenu = element;
                 }}>
 
-                  <Route path={routes.HOME} component={ScheduleUpload} />
+                  
                     <Link to={routes.HOME}><a>Metropolitan State University of Denver at Auraria Campus</a></Link>
                   {/*<a href="#about">Heyo this is dummy tex that is as long as possible to test if the padding is uniform lalalalalalalalalalalalalalalalalal </a>*/}
 

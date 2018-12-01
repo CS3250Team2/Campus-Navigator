@@ -73,6 +73,7 @@
     color: black;
     font-size: .75rem;
     padding: .25rem;
+    font-weight: bold;
     text-decoration: none;
     display: block;
     color: #791313;
@@ -84,7 +85,6 @@
 
 .dropdown a:hover {
   background-color: #ddd;
-
 }
 
 .show {display: block;}
