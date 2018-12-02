@@ -1,24 +1,26 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Component } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { Component } from "react";
 
-import classes from './UserForm.css';
+import classes from "./UserForm.css";
+import axios from 'axios';
 // code found on https://blog.stvmlbrn.com/2017/12/17/upload-files-using-react-to-node-express-server.html
 
 class UserForm extends Component {
     constructor() {
         super();
         this.state = {
-            description: '',
-            selectedFile: '',
+            description: "",
+            selectedFile: ""
         };
     }
 
     onChange = e => {
         switch (e.target.name) {
-            case 'selectedFile':
+            case "selectedFile":
                 this.setState({ selectedFile: e.target.files[0] });
                 if (e.target.files[0] !== undefined) {
-                    document.getElementById('fileName').innerHTML = e.target.files[0].name;
+                    document.getElementById("fileName").innerHTML =
+                        e.target.files[0].name;
                 }
                 break;
             default:
@@ -31,34 +33,42 @@ class UserForm extends Component {
         const { description, selectedFile } = this.state;
         let formData = new FormData();
 
-        formData.append('description', description);
-        formData.append('selectedFile', selectedFile);
+        formData.append("description", description);
+        formData.append("selectedFile", selectedFile);
+        axios.post('/upload', formData)
+          .then((result) => {
+            // access results...
+          });
     };
 
     //Sends click event to input element when upload div is clicked
     middleMan = () => {
-        document.getElementById('uploadInput').click();
+        document.getElementById("uploadInput").click();
     };
 
     middleMan2 = () => {
-        document.getElementById('submitInput').click();
-    };
+      document.getElementById("submitInput").click();
+    }
 
     render() {
         const { description, selectedFile } = this.state;
         return (
-            <form onSubmit={this.onSubmit} className={classes.UserForm} onClick={this.onChange}>
+            <form
+                onSubmit={this.onSubmit}
+                className={classes.UserForm}
+                onClick={this.onChange}
+            >
                 <div className={classes.ImageContainer}>
-                    <div id="uploadButton" className={classes.UploadButton} onClick={this.middleMan}>
-                        UPLOAD SCHEDULE &nbsp;
-                        <FontAwesomeIcon icon="upload" color="#25116c" />
+                    <div
+                        id="uploadButton"
+                        className={classes.UploadButton}
+                        onClick={this.middleMan}
+                    >
+                            UPLOAD SCHEDULE &nbsp;
+                            <FontAwesomeIcon icon="upload" color="#25116c"/>
                     </div>
-                    <div className={classes.SubmitButton} onClick={this.middleMan2}>
-                        GO
-                    </div>
-                    <h3 id="fileName" className={classes.FileName}>
-                        {' '/*Gets rid of the heading-has-content warning until a file is chosen.*/}
-                    </h3>
+                    <div className={classes.SubmitButton} onClick={this.middleMan2}>GO</div>
+                    <h3 id="fileName" className={classes.FileName} />
                 </div>
                 <input
                     id="uploadInput"
@@ -68,7 +78,7 @@ class UserForm extends Component {
                     onChange={this.onChange}
                     className={classes.Special}
                 />
-                <button id="submitInput" type="submit" className={classes.Special} />
+                <button id="submitInput" type="submit"className={classes.Special} />
             </form>
         );
     }
