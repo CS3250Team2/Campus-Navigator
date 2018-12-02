@@ -7,7 +7,6 @@
 
 import React, {Component} from 'react';
 import classes from './FeaturePage.css';
-import ScheduleUpload from '../ScheduleUpload/ScheduleUpload';
 import { Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 

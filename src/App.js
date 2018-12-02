@@ -13,6 +13,7 @@ import LandingPage from './containers/LandingPage/LandingPage';
 import ScheduleUpload from './containers/ScheduleUpload/ScheduleUpload';
 import Register from './containers/UserAuth/Register';
 import Login from './containers/UserAuth/Login';
+import Account from './containers/UserAuth/Account';
 import ContactPage from './containers/ContactPage/ContactPage';
 import FeaturePage from './containers/FeaturePage/FeaturePage';
 import EventPage from './containers/EventPage/EventPage';
@@ -34,6 +35,7 @@ const App = () => {
                     <Route path={routes.EVENT} component={EventPage} />
                     <Route path={routes.SIGN_UP} component={Register} />
                     <Route path={routes.SIGN_IN} component={Login} />
+                    <Route path={routes.ACCOUNT} component={Account} />
                 </Layout>
             </Router>
         </div>
