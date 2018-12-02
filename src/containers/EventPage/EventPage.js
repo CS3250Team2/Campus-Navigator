@@ -32,7 +32,7 @@
          }
        }
      }
-     request.open("GET","url",true);
+     request.open("GET","https://www.trumba.com/calendars/msu-denver-events-calendars-academic-calendar-student.xml",true);
      request.send();
    }
    componentDidMount(){
