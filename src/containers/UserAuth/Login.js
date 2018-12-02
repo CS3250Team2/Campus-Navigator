@@ -8,7 +8,7 @@
 import React, { Component } from 'react';
 import Content from '../Content/Content';
 import { Link, withRouter } from 'react-router-dom';
-import { auth } from '../../firebase';
+import { withFirebase } from '../../Firebase';
 
 import classes from './LoginReg.css';
 import * as routes from '../../constants/routes';
@@ -18,10 +18,6 @@ const INITIAL_STATE = {
     password: '',
     error: null,
 };
-
-const byPropKey = (propName, value) => () => ({
-    [propName]: value,
-});
 
 class LoginPage extends Component {
     constructor(props) {
@@ -33,18 +29,21 @@ class LoginPage extends Component {
     onSubmit = event => {
         const { email, password } = this.state;
 
-        const { history } = this.props;
-
-        auth.doSignInWithEmailAndPassword(email, password)
+        this.props.firebase
+            .doSignInWithEmailAndPassword(email, password)
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });
-                history.push(routes.HOME);
+                this.props.history.push(routes.HOME);
             })
             .catch(error => {
-                this.setState(byPropKey('error', error));
+                this.setState({ error });
             });
 
         event.preventDefault();
+    };
+
+    onChange = event => {
+        this.setState({ [event.target.name]: event.target.value });
     };
 
     render() {
@@ -57,12 +56,14 @@ class LoginPage extends Component {
                 <Content title="Login">
                     <form onSubmit={this.onSubmit}>
                         <input
+                            name="email"
                             value={email}
                             onChange={event => this.setState(byPropKey('email', event.target.value))}
                             type="text"
                             placeholder="Email Address"
                         />
                         <input
+                            name="password"
                             value={password}
                             onChange={event => this.setState(byPropKey('password', event.target.value))}
                             type="password"
@@ -73,11 +74,13 @@ class LoginPage extends Component {
                         {error && <p className={classes.ErrorMessage}>{error.message}</p>}
                     </form>
 
-                    <p className={classes.SignUpLink}>Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link></p>
+                    <p className={classes.SignUpLink}>
+                        Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
+                    </p>
                 </Content>
             </div>
         );
     }
 }
 
-export default withRouter(LoginPage);
+export default withRouter(withFirebase(LoginPage));

@@ -12,14 +12,15 @@ import { firebase } from './firebase';
 import Layout from './components/Layout/Layout';
 import LandingPage from './containers/LandingPage/LandingPage';
 import ScheduleUpload from './containers/ScheduleUpload/ScheduleUpload';
-import Register from "./containers/UserAuth/Register";
+import Register from './containers/UserAuth/Register';
 import Login from './containers/UserAuth/Login';
-import ContactPage from "./containers/ContactPage/ContactPage";
-import FeaturePage from "./containers/FeaturePage/FeaturePage";
-import EventPage from "./containers/EventPage/EventPage";
+import ContactPage from './containers/ContactPage/ContactPage';
+import FeaturePage from './containers/FeaturePage/FeaturePage';
+import EventPage from './containers/EventPage/EventPage';
+import { withFirebase } from './Firebase';
 
 import * as routes from './constants/routes';
-import classes from "./App.css";
+import classes from './App.css';
 
 class App extends Component {
     constructor(props) {
@@ -31,9 +32,13 @@ class App extends Component {
     }
 
     componentDidMount() {
-        firebase.auth.onAuthStateChanged(authUser => {
+        this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
             authUser ? this.setState({ authUser }) : this.setState({ authUser: null });
         });
+    }
+
+    componentWillUnmount() {
+        this.listener(); //Removes the authentication listener when the App is unmounted to prevent memory leaks
     }
 
     render() {
@@ -41,8 +46,8 @@ class App extends Component {
         return (
             <div className={classes.App}>
                 <Router>
-                    <Layout>
-                        <Route path={routes.LANDING}  exact component={LandingPage} />
+                    <Layout authUser={this.state.authUser}>
+                        <Route path={routes.LANDING} exact component={LandingPage} />
                         <Route path={routes.HOME} component={ScheduleUpload} />
                         <Route path={routes.CONTACT} component={ContactPage} />
                         <Route path={routes.FEATURES} component={FeaturePage} />
@@ -56,4 +61,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withFirebase(App);

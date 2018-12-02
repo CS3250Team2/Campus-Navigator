@@ -8,7 +8,7 @@
 import React, { Component } from 'react';
 import Content from '../Content/Content';
 import { Link, withRouter } from 'react-router-dom';
-import { auth } from '../../firebase';
+import { withFirebase } from '../../Firebase';
 
 import classes from './LoginReg.css';
 import * as routes from '../../constants/routes';
@@ -21,10 +21,6 @@ const INITIAL_STATE = {
     error: null,
 };
 
-const byPropKey = (propName, value) => () => ({
-    [propName]: value,
-});
-
 class RegisterPage extends Component {
     constructor(props) {
         super(props);
@@ -35,18 +31,21 @@ class RegisterPage extends Component {
     onSubmit = event => {
         const { username, email, pass1 } = this.state;
 
-        const { history } = this.props;
-
-        auth.doCreateUserWithEmailAndPassword(email, pass1)
+        this.props.firebase
+            .doCreateUserWithEmailAndPassword(email, pass1)
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });
-                history.push(routes.HOME);
+                this.props.history.push(routes.HOME);
             })
             .catch(error => {
-                this.setState(byPropKey('error', error));
+                this.setState({ error });
             });
 
         event.preventDefault();
+    };
+
+    onChange = event => {
+        this.setState({ [event.target.name]: event.target.value });
     };
 
     render() {
@@ -65,29 +64,33 @@ class RegisterPage extends Component {
                 <Content title="Sign Up">
                     <form onSubmit={this.onSubmit}>
                         <input
+                            name="username"
                             value={username}
-                            onChange={event => this.setState(byPropKey('username', event.target.value))}
+                            onChange={this.onChange}
                             type="text"
                             placeholder="Create Username"
                         />
 
                         <input
+                            name="email"
                             value={email}
-                            onChange={event => this.setState(byPropKey('email', event.target.value))}
+                            onChange={this.onChange}
                             type="email"
                             placeholder="Email Address"
                         />
 
                         <input
+                            name="pass1"
                             value={pass1}
-                            onChange={event => this.setState(byPropKey('pass1', event.target.value))}
+                            onChange={this.onChange}
                             type="password"
                             placeholder="Create Password"
                         />
 
                         <input
+                            name="pass2"
                             value={pass2}
-                            onChange={event => this.setState(byPropKey('pass2', event.target.value))}
+                            onChange={this.onChange}
                             type="password"
                             placeholder="Confirm Password"
                         />
@@ -106,4 +109,4 @@ class RegisterPage extends Component {
     }
 }
 
-export default withRouter(RegisterPage);
+export default withRouter(withFirebase(RegisterPage));
