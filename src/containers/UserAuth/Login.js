@@ -58,14 +58,14 @@ class LoginPage extends Component {
                         <input
                             name="email"
                             value={email}
-                            onChange={event => this.setState(byPropKey('email', event.target.value))}
+                            onChange={this.onChange}
                             type="text"
                             placeholder="Email Address"
                         />
                         <input
                             name="password"
                             value={password}
-                            onChange={event => this.setState(byPropKey('password', event.target.value))}
+                            onChange={this.onChange}
                             type="password"
                             placeholder="Password"
                         />
