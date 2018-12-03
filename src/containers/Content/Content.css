@@ -2,7 +2,8 @@
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 1rem;
-    margin: 9rem auto 0 auto;
+    margin: 0;
+    margin-top: 9rem;
     grid-row: 2;
     grid-column: 3 / 4;
     display: grid;

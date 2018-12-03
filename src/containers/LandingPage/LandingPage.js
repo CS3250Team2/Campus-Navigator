@@ -1,3 +1,10 @@
+/* Component Name: LandingPage
+ * Function: Content for the home page for unauthenticated users
+ *
+ * Props Received: None
+ *
+ */
+
 import React from 'react';
 import Content from '../Content/Content';
 import { Link } from 'react-router-dom';
