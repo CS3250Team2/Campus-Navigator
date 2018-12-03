@@ -2,10 +2,13 @@
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 1rem;
-    margin: 5rem 5% 0 5%;
+    margin: 9rem auto 0 auto;
+    grid-row: 2;
+    grid-column: 3 / 4;
     display: grid;
     grid-template-rows: auto auto auto;
-    font-size: .75rem;
+    grid-template-columns: 100%;
+    font-size: 0.75rem;
     padding: 1rem;
     font-weight: bold;
     text-decoration: none;
@@ -16,9 +19,8 @@
 .Logo {
     grid-row: 1;
     width: 100%;
-    align-self: center;
-    justify-self: center;
 }
+
 
 .Content h2 {
     grid-row: 2;
@@ -34,18 +36,20 @@
     .Content {
         margin: 3rem 0 0 0;
     }
-
-    .Logo {
-        width: 65%;
-    }
 }
 
 @media (min-width: 576px) and (max-width: 812.98px) {
     .Content {
         padding: 1rem 2rem;
     }
+}
 
+@media (max-width: 812.98px) {
+    .Content {
+        grid-column: 2;
+    }
     .Logo {
-        width: 55%;
+        width: 60%;
+        margin-left: 20%;
     }
 }
