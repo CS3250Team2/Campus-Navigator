@@ -1,34 +1,17 @@
-/* Component Name: FeaturePage
- * Function: Container for the content of the features
- *
- * Props Received: None
- *
- */
-
-import React, {Component} from 'react';
-import classes from './FeaturePage.css';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Content from '../Content/Content';
+
+import classes from './FeaturePage.css';
 import * as routes from '../../constants/routes';
 
-class FeaturePage extends Component {
-    render() {
-        return(
-            <div className={classes.FeaturePage}>
-              <div id="grid">
-                <div className={classes.Content}>
-                  <img
-                      className={classes.Logo}
-                      src={require("../../assets/images/logo03.png")}
-                      alt="Campus Navigator Logo"
-                  />
-                  <h1>CLICK THE LINKS BELOW TO CHECK OUT OTHER FEATURES</h1>
-                  <Link to={routes.HOME}><p>Schedule Planner</p></Link>
-                  <Link to={routes.EVENT}><p>Events</p></Link>
-                </div>
-              </div>
-            </div>
-        );
-    }
-}
+const FeaturePage = () => (
+    <Content title="Click the Links Below to Check Out Our Features">
+        <div className={classes.FeaturePage}>
+            <Link to={routes.HOME}>SCHEDULE PLANNER</Link>
+            <Link to={routes.EVENTS}>EVENTS</Link>
+        </div>
+    </Content>
+);
 
-export default FeaturePage
+export default FeaturePage;

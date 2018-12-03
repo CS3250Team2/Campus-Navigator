@@ -24,10 +24,10 @@ class LandingPage extends React.Component {
 
     render() {
         return (
-            <Content title="School Selection">
+            <Content title="">
                 <div className={classes.LandingPage}>
                     <div className={classes.CampusToggle} onClick={this.toggleMenu}>
-                        CHOOSE YOUR CAMPUS
+                        Choose Your Campus
                     </div>
                     {this.state.showMenu ? (
                         <div className={classes.CampusSelection}>
