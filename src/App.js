@@ -18,6 +18,7 @@ import Register from "./containers/UserAuth/Register";
 import ContactPage from "./containers/ContactPage/ContactPage";
 import FeaturePage from "./containers/FeaturePage/FeaturePage";
 import EventPage from "./containers/EventPage/EventPage";
+import CampusMap from "./components/CampusMap/CampusMap";
 import * as routes from './constants/routes';
 
 class App extends Component {
@@ -48,6 +49,7 @@ class App extends Component {
                         <Route path={routes.SIGN_UP} component={Register} />
                         <Route path={routes.SIGN_IN} component={Login} />
                         <Route path={routes.HOME} component={ScheduleUpload} />
+                        <Route path={routes.SCHEDULE} component={CampusMap}/>
                     </Layout>
                 </Router>
             </div>
