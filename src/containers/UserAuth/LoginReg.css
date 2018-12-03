@@ -1,12 +1,6 @@
 .Login, .Register {
-    grid-column-start: 3;
-    grid-column-end:6;
-    grid-row: 2;
-}
-
-form {
     grid-row: 3;
-    align-self: center;
+    width: 100%;
 }
 
 form input {

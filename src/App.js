@@ -4,55 +4,42 @@
  * Props Received: None
  *
  */
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import Layout from './components/Layout/Layout';
 import LandingPage from './containers/LandingPage/LandingPage';
 import ScheduleUpload from './containers/ScheduleUpload/ScheduleUpload';
+import Register from './containers/UserAuth/Register';
 import Login from './containers/UserAuth/Login';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUpload } from '@fortawesome/free-solid-svg-icons';
-import { firebase } from './firebase';
-import classes from "./App.css";
-import Register from "./containers/UserAuth/Register";
-import ContactPage from "./containers/ContactPage/ContactPage";
-import FeaturePage from "./containers/FeaturePage/FeaturePage";
-import EventPage from "./containers/EventPage/EventPage";
+import Account from './containers/UserAuth/Account';
+import ContactPage from './containers/ContactPage/ContactPage';
+import FeaturePage from './containers/FeaturePage/FeaturePage';
+import EventPage from './containers/EventPage/EventPage';
+
 import * as routes from './constants/routes';
+import classes from './App.css';
+import { withAuthentication } from './hoc/Session';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
+const App = () => {
+    library.add(faUpload);
+    return (
+        <div className={classes.App}>
+            <Router>
+                <Layout>
+                    <Route path={routes.LANDING} exact component={LandingPage} />
+                    <Route path={routes.HOME} component={ScheduleUpload} />
+                    <Route path={routes.CONTACT} component={ContactPage} />
+                    <Route path={routes.FEATURES} component={FeaturePage} />
+                    <Route path={routes.EVENTS} component={EventPage} />
+                    <Route path={routes.SIGN_UP} component={Register} />
+                    <Route path={routes.SIGN_IN} component={Login} />
+                    <Route path={routes.ACCOUNT} component={Account} />
+                </Layout>
+            </Router>
+        </div>
+    );
+};
 
-        this.state = {
-            authUser: null,
-        };
-    }
-
-    componentDidMount() {
-        firebase.auth.onAuthStateChanged(authUser => {
-            authUser ? this.setState({ authUser }) : this.setState({ authUser: null });
-        });
-    }
-
-    render() {
-        library.add(faUpload);
-        return (
-            <div className={classes.App}>
-                <Router>
-                    <Layout>
-                        <Route path={routes.LANDING}  exact component={LandingPage} />
-                        <Route path={routes.CONTACT} component={ContactPage} />
-                        <Route path={routes.FEATURES} component={FeaturePage} />
-                        <Route path={routes.EVENT} component={EventPage} />
-                        <Route path={routes.SIGN_UP} component={Register} />
-                        <Route path={routes.SIGN_IN} component={Login} />
-                        <Route path={routes.HOME} component={ScheduleUpload} />
-                    </Layout>
-                </Router>
-            </div>
-        );
-    }
-}
-
-export default App;
+export default withAuthentication(App);
