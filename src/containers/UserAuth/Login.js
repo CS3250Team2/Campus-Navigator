@@ -5,7 +5,7 @@
  *
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import Content from '../Content/Content';
 import { Link, withRouter } from 'react-router-dom';
 import { withFirebase } from '../../Firebase';
@@ -19,7 +19,7 @@ const INITIAL_STATE = {
     error: null,
 };
 
-class LoginPage extends Component {
+class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
@@ -52,8 +52,8 @@ class LoginPage extends Component {
         const isInvalid = password === '' || email === '';
 
         return (
-            <div className={classes.Login}>
-                <Content title="Login">
+            <Content title="Login">
+                <div className={classes.Login}>
                     <form onSubmit={this.onSubmit}>
                         <input
                             name="email"
@@ -77,8 +77,8 @@ class LoginPage extends Component {
                     <p className={classes.SignUpLink}>
                         Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
                     </p>
-                </Content>
-            </div>
+                </div>
+            </Content>
         );
     }
 }

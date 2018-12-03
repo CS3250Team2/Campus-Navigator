@@ -34,9 +34,7 @@ class RegisterPage extends Component {
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, pass1)
             .then(authUser => {
-                return this.props.firebase
-                    .user(authUser.user.uid)
-                    .set({username, email});
+                return this.props.firebase.user(authUser.user.uid).set({ username, email });
             })
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });
@@ -65,8 +63,8 @@ class RegisterPage extends Component {
             pass1.length < 6;
 
         return (
-            <div className={classes.Register}>
-                <Content title="Sign Up">
+            <Content title="Sign Up">
+                <div className={classes.Register}>
                     <form onSubmit={this.onSubmit}>
                         <input
                             name="username"
@@ -108,8 +106,8 @@ class RegisterPage extends Component {
                     <p className={classes.SignInLink}>
                         Already have an account? <Link to={routes.SIGN_IN}>Sign In</Link>
                     </p>
-                </Content>
-            </div>
+                </div>
+            </Content>
         );
     }
 }
