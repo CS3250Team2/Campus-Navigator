@@ -5,7 +5,7 @@
  *
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import Content from '../Content/Content';
 import UserForm from '../../components/UserForm/UserForm';
 import { withAuthorization } from '../../hoc/Session';
@@ -13,11 +13,9 @@ import { withAuthorization } from '../../hoc/Session';
 import classes from './ScheduleUpload.css';
 
 const HomePage = () => (
-    <div className={classes.ScheduleUpload}>
-        <Content title="Let's Get You On Your Way">
-            <UserForm />
-        </Content>
-    </div>
+    <Content title="Let's Get You On Your Way">
+        <UserForm />
+    </Content>
 );
 
 const condition = authUser => !!authUser;

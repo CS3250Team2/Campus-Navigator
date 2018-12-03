@@ -13,7 +13,7 @@ import classes from './ContactPage.css';
 const ContactPage = () => (
     <Content title="Have Issues or Suggestions?">
         <div className={classes.ContactPage}>
-            <a href="https://github.com/CS3250Team2/Campus-Navigator/issues" target="_blank">Contact Us Here</a>
+            <a href="https://github.com/CS3250Team2/Campus-Navigator/issues" target="_blank" rel="noopener noreferrer">Contact Us Here</a>
         </div>
     </Content>
 );
