@@ -24,6 +24,7 @@ class FeaturePage extends Component {
                   />
                   <h1>CLICK THE LINKS BELOW TO CHECK OUT OTHER FEATURES</h1>
                   <Link to={routes.HOME}><p>Schedule Planner</p></Link>
+                  <Link to={routes.SCHEDULE}><p>Schedule End</p></Link>
                   <Link to={routes.EVENT}><p>Events</p></Link>
                 </div>
               </div>
