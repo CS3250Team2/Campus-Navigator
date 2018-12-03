@@ -7,8 +7,9 @@
     background-position: center;
     height: 100vh;
     display: grid;
-    grid-template-columns: 5% 30% 5% 20% 5% 30% 5%;
-    grid-template-rows: 3.5rem auto;
+    grid-template-columns: 5% 26% auto 26% 5%;
+    grid-template-rows: 3.5rem auto 1fr;
+    grid-column-gap: 2%;
     font-family: Arial, sans-serif;
 }
 
@@ -16,6 +17,6 @@
 @media (max-width: 812.98px) {
     .App {
         grid-template-columns: 5% auto 5%;
-        background-position: right;
+        grid-column-gap: 0;
     }
 }
