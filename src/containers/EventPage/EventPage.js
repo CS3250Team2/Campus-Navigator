@@ -6,17 +6,19 @@
  import UserForm from "../../components/UserForm/UserForm";
 
  import classes from "./EventPage.css";
+ import Blog from "../../components/Blog/Blog";
 
- class EventPage extends Component {
-     render() {
-         return (
-             <div className={classes.EventPage}>
-               <div className={classes.Content}>
-                  <h1>EVENTS</h1>
-               </div>
+
+ export class EventPage extends Component{
+   render() {
+       return (
+           <div className={classes.EventPage}>
+             <div className={classes.Content}>
+                <h1>EVENTS</h1>
+                <Blog/>
              </div>
-         );
-     }
+           </div>
+       );
+   }
  }
-
- export default EventPage;
+export default EventPage;
