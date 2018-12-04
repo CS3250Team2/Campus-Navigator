@@ -1,26 +1,25 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { Component } from "react";
+import React from 'react';
+import FileUploader from 'react-firebase-file-uploader';
+import { withFirebase } from '../../Firebase';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import classes from "./UserForm.css";
-import axios from 'axios';
-// code found on https://blog.stvmlbrn.com/2017/12/17/upload-files-using-react-to-node-express-server.html
+import classes from './UserForm.css';
 
-class UserForm extends Component {
-    constructor() {
-        super();
+class UserForm extends React.Component {
+    constructor(props) {
+        super(props);
         this.state = {
-            description: "",
-            selectedFile: ""
+            description: '',
+            selectedFile: '',
         };
     }
 
     onChange = e => {
         switch (e.target.name) {
-            case "selectedFile":
+            case 'selectedFile':
                 this.setState({ selectedFile: e.target.files[0] });
                 if (e.target.files[0] !== undefined) {
-                    document.getElementById("fileName").innerHTML =
-                        e.target.files[0].name;
+                    document.getElementById('fileName').innerHTML = e.target.files[0].name;
                 }
                 break;
             default:
@@ -28,59 +27,39 @@ class UserForm extends Component {
         }
     };
 
-    onSubmit = e => {
-        e.preventDefault();
-        const { description, selectedFile } = this.state;
-        let formData = new FormData();
-
-        formData.append("description", description);
-        formData.append("selectedFile", selectedFile);
-        axios.post('/upload', formData)
-          .then((result) => {
-            // access results...
-          });
+    startUpload = event => {
+        event.preventDefault();
+        console.log(event.target);
+        this.fileUploader.startUpload(this.state.selectedFile);
     };
-
-    //Sends click event to input element when upload div is clicked
-    middleMan = () => {
-        document.getElementById("uploadInput").click();
-    };
-
-    middleMan2 = () => {
-      document.getElementById("submitInput").click();
-    }
 
     render() {
-        const { description, selectedFile } = this.state;
         return (
-            <form
-                onSubmit={this.onSubmit}
-                className={classes.UserForm}
-                onClick={this.onChange}
-            >
+            <form className={classes.UserForm}>
                 <div className={classes.ImageContainer}>
-                    <div
-                        id="uploadButton"
-                        className={classes.UploadButton}
-                        onClick={this.middleMan}
-                    >
-                            UPLOAD SCHEDULE &nbsp;
-                            <FontAwesomeIcon icon="upload" color="#25116c"/>
+                    <label className={classes.UploadButton}>
+                        UPLOAD SCHEDULE &nbsp;
+                        <FontAwesomeIcon icon="upload" color="#25116c" />
+                        <FileUploader
+                            hidden
+                            accept=".htm, .html"
+                            name="selectedFile"
+                            storageRef={this.props.firebase.storage.ref('schedules')}
+                            filename={this.props.firebase.auth.O}
+                            onChange={this.onChange}
+                            ref={instance => {
+                                this.fileUploader = instance;
+                            }}
+                        />
+                    </label>
+                    <div className={classes.SubmitButton} onClick={this.startUpload}>
+                        GO
                     </div>
-                    <div className={classes.SubmitButton} onClick={this.middleMan2}>GO</div>
-                    <h3 id="fileName" className={classes.FileName} />
+                    <h3 id="fileName" className={classes.FileName}>{' '}</h3>
                 </div>
-                <input
-                    id="uploadInput"
-                    type="file"
-                    name="selectedFile"
-                    accept=".html, .htm"
-                    onChange={this.onChange}
-                    className={classes.Special}
-                />
-                <button id="submitInput" type="submit"className={classes.Special} />
             </form>
         );
     }
 }
-export default UserForm;
+
+export default withFirebase(UserForm);

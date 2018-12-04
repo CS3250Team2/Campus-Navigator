@@ -9,11 +9,16 @@ import React from 'react';
 import Aux from '../../../hoc/Auxiliary';
 import NavItem from './NavItem/NavItem';
 import SignOutButton from './SignOutButton/SignOutButton';
+import { AuthUserContext } from '../../../hoc/Session';
 
 import classes from './NavItems.css';
 import * as routes from '../../../constants/routes';
 
-const navItems = ({authUser}) => <Aux>{authUser ? <NavAuth /> : <NavNoAuth />}</Aux>;
+const navItems = () => (
+    <Aux>
+        <AuthUserContext.Consumer>{authUser => (authUser ? <NavAuth /> : <NavNoAuth />)}</AuthUserContext.Consumer>
+    </Aux>
+);
 
 const NavAuth = () => (
     <ul className={classes.NavItems}>
@@ -29,7 +34,6 @@ const NavAuth = () => (
     </ul>
 );
 
-        
 const NavNoAuth = () => (
     <ul className={classes.NavItems}>
         <div className={classes.Navigation}>

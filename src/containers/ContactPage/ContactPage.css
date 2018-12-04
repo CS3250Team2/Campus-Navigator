@@ -1,4 +1,5 @@
 .ContactPage {
+<<<<<<< HEAD
     grid-column-start: 3;
     grid-column-end: 6;
     grid-row: 3/ span 3;
@@ -46,4 +47,24 @@
         width: 100%;
         margin-left: 0;
     }
+=======
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ContactPage a {
+    background-color: #fff;
+    color: #25116c;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid rgba(111, 111, 111, 0.87);
+    border-radius: 10px;
+    margin: 0.25rem 0;
+    padding: 0.5rem 0.75rem;
+    user-select: none;
+    cursor: pointer;
+>>>>>>> 140958d57d44f70e8d49efe0ba2a92688fc12569
 }

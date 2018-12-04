@@ -3,7 +3,6 @@
  */
 
  import React, { Component } from "react";
- import UserForm from "../../components/UserForm/UserForm";
 
  import classes from "./EventPage.css";
  import Blog from "../../components/Blog/Blog";

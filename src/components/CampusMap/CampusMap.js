@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import classes from './CampusMap.css'
 class CampusMap extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class CampusMap extends Component {
       directionsDisplay2: null,
 
       mapStyle: {
-        width: '600px',
+        width: '',
         height: '500px'
       }
     };
@@ -121,7 +121,7 @@ class CampusMap extends Component {
 
   render() {
     return (
-      <div id="map" style={this.state.mapStyle}>This should be a map</div>
+      <div id="map" className={classes.map} style={this.state.mapStyle}>This should be a map</div>
     );
   }
 }
