@@ -34,7 +34,7 @@ class RegisterPage extends Component {
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, pass1)
             .then(authUser => {
-                return this.props.firebase.user(authUser.user.uid).set({ username, email });
+                return this.props.firebase.user(authUser.user.uid).set({ username, email, schedule: [] });
             })
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });

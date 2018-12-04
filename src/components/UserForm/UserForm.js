@@ -8,10 +8,6 @@ import classes from './UserForm.css';
 import * as routes from '../../constants/routes';
 
 class UserForm extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     onChange = e => {
         switch (e.target.name) {
             case 'selectedFile':
@@ -42,7 +38,7 @@ class UserForm extends React.Component {
                             hidden
                             accept=".htm, .html"
                             name="selectedFile"
-                            storageRef={this.props.firebase.storage.ref('schedules')}
+                            storageRef={this.props.firebase.storage.ref()}
                             filename={this.props.firebase.auth.O}
                             onChange={this.onChange}
                             ref={instance => {

@@ -10,8 +10,6 @@ import Content from '../Content/Content';
 import UserForm from '../../components/UserForm/UserForm';
 import { withAuthorization } from '../../hoc/Session';
 
-import classes from './ScheduleUpload.css';
-
 const HomePage = () => (
     <Content title="Let's Get You On Your Way">
         <UserForm />
