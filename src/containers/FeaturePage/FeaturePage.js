@@ -8,9 +8,9 @@ import * as routes from '../../constants/routes';
 const FeaturePage = () => (
     <Content title="Click the Links Below to Check Out Our Features">
         <div className={classes.FeaturePage}>
-            <Link to={routes.HOME}>SCHEDULE PLANNER</Link>
-            <Link to={routes.SCHEDULE}><p>Schedule End</p></Link>
-            <Link to={routes.EVENTS}>EVENTS</Link>
+            <Link to={routes.HOME}>Upload a Schedule</Link>
+            <Link to={routes.SCHEDULE}>Your Day's Route</Link>
+            <Link to={routes.EVENTS}>Events</Link>
         </div>
     </Content>
 );

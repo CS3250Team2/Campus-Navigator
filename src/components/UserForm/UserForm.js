@@ -1,17 +1,15 @@
 import React from 'react';
 import FileUploader from 'react-firebase-file-uploader';
+import { withRouter } from 'react-router-dom';
 import { withFirebase } from '../../Firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import classes from './UserForm.css';
+import * as routes from '../../constants/routes';
 
 class UserForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            description: '',
-            selectedFile: '',
-        };
     }
 
     onChange = e => {
@@ -29,8 +27,8 @@ class UserForm extends React.Component {
 
     startUpload = event => {
         event.preventDefault();
-        console.log(event.target);
         this.fileUploader.startUpload(this.state.selectedFile);
+        this.props.history.push(routes.SCHEDULE);
     };
 
     render() {
@@ -55,11 +53,13 @@ class UserForm extends React.Component {
                     <div className={classes.SubmitButton} onClick={this.startUpload}>
                         GO
                     </div>
-                    <h3 id="fileName" className={classes.FileName}>{' '}</h3>
+                    <h3 id="fileName" className={classes.FileName}>
+                        {' '}
+                    </h3>
                 </div>
             </form>
         );
     }
 }
 
-export default withFirebase(UserForm);
+export default withRouter(withFirebase(UserForm));

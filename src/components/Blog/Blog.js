@@ -34,7 +34,7 @@ class Blog extends Component {
   render(){
     return(
       <div>
-        <a target="_blank" href={this.state.recentBlogPost.url}>{this.state.recentBlogPost.name}</a>
+        <a target="_blank" rel="noreferrer noopener" href={this.state.recentBlogPost.url}>{this.state.recentBlogPost.name}</a>
       </div>
     );
   }
