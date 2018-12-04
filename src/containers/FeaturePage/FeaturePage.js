@@ -10,7 +10,7 @@ const FeaturePage = () => (
         <div className={classes.FeaturePage}>
             <Link to={routes.HOME}>SCHEDULE PLANNER</Link>
             <Link to={routes.SCHEDULE}><p>Schedule End</p></Link>
-            <Link to={routes.EVENT}>EVENTS</Link>
+            <Link to={routes.EVENTS}>EVENTS</Link>
         </div>
     </Content>
 );

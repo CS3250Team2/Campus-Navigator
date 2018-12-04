@@ -14,7 +14,7 @@ class Blog extends Component {
     var request = new XMLHttpRequest();
     request.onreadystatechange = ()=>{
       if(request.readyState==4&&request.status==200){
-        var myObj = JSON.parse(request.responseTest);
+        var myObj = JSON.parse(request.responseText);
         for(let i=0;i<1;i++){
           this.setState({
             recentBlogPost:{
@@ -34,7 +34,7 @@ class Blog extends Component {
   render(){
     return(
       <div>
-        Check out our blog:<a target="_blank" href={this.state.recentBlogPost.url}>{this.state.recentBlogPost.name}</a>
+        <a target="_blank" href={this.state.recentBlogPost.url}>{this.state.recentBlogPost.name}</a>
       </div>
     );
   }
