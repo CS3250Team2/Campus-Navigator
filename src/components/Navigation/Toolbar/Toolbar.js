@@ -15,7 +15,7 @@ import classes from "./Toolbar.css";
 
 const toolbar = props => (
     <header className={classes.Toolbar}>
-        <NavItems authUser={props.authUser}/>
+        <NavItems />
         <DrawerToggle clicked={props.drawerToggleClicked} />
     </header>
 );

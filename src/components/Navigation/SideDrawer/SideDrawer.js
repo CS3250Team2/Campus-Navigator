@@ -28,7 +28,7 @@ const sideDrawer = props => {
                     src={require('../../../assets/images/logo02.png')}
                     alt="Campus Navigator Logo"
                 />
-                <NavItems authUser={props.authUser}/>
+                <NavItems />
             </div>
         </Aux>
     );

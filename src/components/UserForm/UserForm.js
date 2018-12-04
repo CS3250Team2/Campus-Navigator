@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Component } from "react";
 
 import classes from "./UserForm.css";
+import axios from 'axios';
 // code found on https://blog.stvmlbrn.com/2017/12/17/upload-files-using-react-to-node-express-server.html
 
 class UserForm extends Component {
@@ -34,6 +35,10 @@ class UserForm extends Component {
 
         formData.append("description", description);
         formData.append("selectedFile", selectedFile);
+        axios.post('/upload', formData)
+          .then((result) => {
+            // access results...
+          });
     };
 
     //Sends click event to input element when upload div is clicked
