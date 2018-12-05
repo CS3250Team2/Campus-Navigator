@@ -43,7 +43,7 @@ class MapContainer extends React.Component{
       request1:request1,
     });
     ReactDOM.render(
-      <CampusMap
+      <CampusMapOld
         request={this.request}
         request1={this.request1}
         request2={this.request2}
@@ -69,7 +69,7 @@ class MapContainer extends React.Component{
     });
     //here is where we would render the CampusMap
     ReactDOM.render(
-      <CampusMap
+      <CampusMapOld
         request={this.request}
         request1={this.request1}
         request2={this.request2}
@@ -90,7 +90,7 @@ class MapContainer extends React.Component{
       request1:request1,
     });
     ReactDOM.render(
-      <CampusMap
+      <CampusMapOld
         request={this.request}
         request1={this.request1}
         request2={this.request2}
@@ -106,30 +106,27 @@ class MapContainer extends React.Component{
       travelMode:'WALKING',
       waypoints:[
         {
-            location: '${building[0]},metro state,CO'
+            location: building[0]
         },
         {
-            location:'${building[1]},metro state,CO'
+            location:building[1]
         },
         {
-            location:'${building[2]},metro state,CO'
+            location:building[2]
         },
         {
-            location:'${building[3]},metro state,CO'
+            location:building[3]
         },
       ],
-      destination: '${building[4]},metro state,CO',
+      destination: building[4]
     };
-    this.setState({
-      request1:request1,
-    });
     ReactDOM.render(
-      <CampusMap
+      <CampusMapOld
         request={this.request}
         request1={this.request1}
         request2={this.request2}
-        request3={this.request4
-      }/>,
+        request3={this.request4}
+        />,
       document.getElementById('mapCont')
     );
     //here is where we would render the CampusMap

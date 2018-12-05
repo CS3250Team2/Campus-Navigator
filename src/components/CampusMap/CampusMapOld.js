@@ -12,6 +12,10 @@ class CampusMapOld extends Component {
       directionsDisplay: null,
       directionsDisplay2: null,
       directionsDisplay3: null,
+      request:props.request,
+      request1:props.request1,
+      request2:props.request2,
+      request3:props.request3,
 
       mapStyle: {
         width: '',
@@ -80,8 +84,6 @@ class CampusMapOld extends Component {
         }
       });
     }
-
-
     this.setState({
       map: map,
       directionsService: directionsService,
