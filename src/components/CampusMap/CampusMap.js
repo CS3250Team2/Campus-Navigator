@@ -8,6 +8,8 @@ let building = schedule.building;
 let api = process.env.REACT_APP_GOOGLE_API;
 let request;
 let request1;
+let map;
+
 class CampusMap extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,9 @@ class CampusMap extends Component {
     this.state = {
       apiKey: api,
       map: null,
+      service:null,
+      infowindow:null,
+      place:null,
 
 
       origin: "colfax at auraria light rail, denver, CO",
@@ -42,6 +47,7 @@ class CampusMap extends Component {
     window.initMap = this.initMap.bind(this);
 
     loadJS(`https://maps.googleapis.com/maps/api/js?key=${this.state.apiKey}&callback=initMap`);
+    loadJS(`https://maps.googleapis.com/maps/api/js?key=${this.state.apiKey}&libraries=places`);
   }
 
   driveToCampus(){
@@ -51,11 +57,30 @@ class CampusMap extends Component {
       destination:"7th street parking garage, denver, CO",
     }
   }
+
   driveTransitToCampus(){
+
+    let request2 = {
+    query: 'Nearest lightrail',
+    fields: ['rail'],
+    };
+
+    service = new google.maps.places.PlacesService(map);
+    service.findPlaceFromQuery(request, callback);
+
+    this.setState({
+      service:service,      
+    });
+
     let request={
       origin:'',
       travelMode:'DRIVE',
-      destination:'',//this needs to be nearest lightrail through places API
+      destination:this.state.place[0],//this needs to be nearest lightrail through places API
+    };
+    let request3={
+      origin:this.state.place[0],
+      travelMode:'RAIL',
+      destination:'Colfax at auraria',
     }
   }
   transitToCampus(){
@@ -63,7 +88,7 @@ class CampusMap extends Component {
       origin:'',
       travelMode:'TRANSIT',
       destination:'Colfax at auraria',
-    }
+    };
   }
   walkToCampus(){
     let request1={
@@ -155,6 +180,16 @@ class CampusMap extends Component {
   script.async = true;
   ref.parentNode.insertBefore(script, ref);
 }
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      this.setState({
+        place:results[i],
+      });
+    }
+  }
+}
+
   // window.google.maps.event.addDomListener(window, 'load', listenerload=()=> {initialize(1.299845,103.856292);});
 
 
