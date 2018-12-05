@@ -74,6 +74,9 @@ class LoginPage extends React.Component {
                         {error && <p className={classes.ErrorMessage}>{error.message}</p>}
                     </form>
 
+                    <p className={classes.ForgetLink}>
+                        <Link to={routes.PASS_FORGET}>Forget Your Password?</Link>
+                    </p>
                     <p className={classes.SignUpLink}>
                         Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
                     </p>

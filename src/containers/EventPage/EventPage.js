@@ -2,22 +2,18 @@
  *  Function: feed from MSU on events
  */
 
- import React, { Component } from "react";
+import React, { Component } from 'react';
+import Content from '../Content/Content';
 
- import classes from "./EventPage.css";
- import Blog from "../../components/Blog/Blog";
+import Blog from '../../components/Blog/Blog';
 
-
- export class EventPage extends Component{
-   render() {
-       return (
-           <div className={classes.EventPage}>
-             <div className={classes.Content}>
-                <h1>EVENTS</h1>
-                <Blog/>
-             </div>
-           </div>
-       );
-   }
- }
+export class EventPage extends Component {
+    render() {
+        return (
+            <Content title="Check Out Some Recent Events">
+                <Blog />
+            </Content>
+        );
+    }
+}
 export default EventPage;

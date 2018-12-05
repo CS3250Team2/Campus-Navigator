@@ -2,8 +2,7 @@
     height: 2rem;
     width: 100%;
     position: fixed;
-    top: 0;
-    left: 0;
+    grid-row: 1;
     background-color: transparent;
     display: flex;
     align-items: center;
