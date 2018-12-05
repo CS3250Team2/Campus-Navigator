@@ -29,19 +29,18 @@ class MapContainer extends React.Component{
       }
     };
   }
-  componentDidMount() {
-    window.initMap = this.initMap.bind(this);
-
-    loadJS(`https://maps.googleapis.com/maps/api/js?key=${this.state.apiKey}&callback=initMap`);
-  }
   driveToCampus=()=>{
     let request={
       origin:'',
       travelMode:'DRIVE',
       destination:"7th street parking garage, denver, CO",
     }
-    this.walkToCampus;   
-
+    this.walkToCampus;
+    this.setState({
+      request:request,
+      request1:request1,
+    });
+    //here is where we would render the CampusMap
   }
 
   driveTransitToCampus=()=>{
@@ -53,7 +52,7 @@ class MapContainer extends React.Component{
 
     let service = new window.google.maps.places.PlacesService(map);
     service.findPlaceFromQuery(request, callback);
-
+    this.walkToCampus;
     this.setState({
       service:service,
     });
@@ -69,6 +68,13 @@ class MapContainer extends React.Component{
       destination:'Colfax at auraria',
     }
     this.walkToCampus;
+    this.setState({
+      request:request,
+      request1:request1,
+      request2:request2,
+      request3:request3,
+    });
+    //here is where we would render the CampusMap
   }
   transitToCampus=()=>{
     let request={
@@ -76,7 +82,12 @@ class MapContainer extends React.Component{
       travelMode:'TRANSIT',
       destination:'Colfax at auraria',
     };
-    this.walkToCampus();
+    this.walkToCampus;
+    this.setState({
+      request:request,
+      request1:request1,
+    });
+    //here is where we would render the CampusMap
   }
   walkToCampus=()=>{
     let request1={
@@ -98,6 +109,10 @@ class MapContainer extends React.Component{
       ],
       destination: building[4],
     };
+    this.setState({
+      request1:request1,
+    });
+    //here is where we would render the CampusMap
   }
   render(){
     return(
