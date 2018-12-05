@@ -10,19 +10,6 @@ class Blog extends Component {
             },
         };
     }
-<<<<<<< HEAD
-  }
-  FetchDataFromRssFeed(){
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = ()=>{
-      if(request.readyState===4&&request.status===200){
-        var myObj = JSON.parse(request.responseTest);
-        for(let i=0;i<1;i++){
-          this.setState({
-            recentBlogPost:{
-              name:myObj.items[i].title,
-              url:myObj.items[i].link
-=======
     FetchDataFromRssFeed() {
         var request = new XMLHttpRequest();
         request.onreadystatechange = () => {
@@ -36,7 +23,6 @@ class Blog extends Component {
                         },
                     });
                 }
->>>>>>> b78529bf2caab768c3cccbd2b732a885179351a2
             }
         };
         request.open(
