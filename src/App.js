@@ -17,8 +17,8 @@ import Account from './containers/UserAuth/Account';
 import ContactPage from './containers/ContactPage/ContactPage';
 import FeaturePage from './containers/FeaturePage/FeaturePage';
 import EventPage from './containers/EventPage/EventPage';
-import CampusMap from "./components/CampusMap/CampusMap";
-
+import CampusMap from './components/CampusMap/CampusMap';
+import PasswordForget from './containers/PasswordForget/PasswordForget';
 
 import * as routes from './constants/routes';
 import classes from './App.css';
@@ -38,7 +38,8 @@ const App = () => {
                     <Route path={routes.SIGN_UP} component={Register} />
                     <Route path={routes.SIGN_IN} component={Login} />
                     <Route path={routes.ACCOUNT} component={Account} />
-                    <Route path={routes.SCHEDULE} component={CampusMap}/>
+                    <Route path={routes.SCHEDULE} component={CampusMap} />
+                    <Route path={routes.PASS_FORGET} component={PasswordForget} />
                 </Layout>
             </Router>
         </div>
