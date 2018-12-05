@@ -1,0 +1,47 @@
+.Schedule p {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.Schedule strong {
+    color: #25116c;
+}
+
+.Schedule {
+    grid-row: 2;
+    grid-column: 2 / 3;
+    height: 60%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0 0 0;
+}
+
+.Schedule h2 {
+    color: #791313;
+    font-weight: bold;
+    margin: 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.Schedule h4 {
+    color: #791313;
+    margin: 0;
+}
+
+.Schedule ul {
+    list-style: none;
+}
+
+.Schedule li {
+    margin: 0.5rem 0;
+}
+
+.Schedule li span {
+    margin-left: 1rem;
+}
+
+@media (max-width: 812.98px) {
+    grid-column: 2;
+}

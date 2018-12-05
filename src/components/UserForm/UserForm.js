@@ -24,7 +24,7 @@ class UserForm extends React.Component {
     startUpload = event => {
         event.preventDefault();
         this.fileUploader.startUpload(this.state.selectedFile);
-        this.props.history.push(routes.SCHEDULE);
+        this.props.history.push(routes.FEATURES);
     };
 
     render() {

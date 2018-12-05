@@ -64,10 +64,15 @@ exports.parseSchedule = functions.storage
                     );
                     parser.write(data);
 
+                    if (times.length !== building.length) return null;
+
                     //Generate class objects from arrays
                     for (let i = 0; i < times.length; i++) {
+                        let splitTime = times[i].split(" - ");
                         let temp = new Object();
-                        temp.time = times[i];
+
+                        temp.startTime = splitTime[0];
+                        temp.endTime = splitTime[1];
                         temp.days = days[i];
                         temp.building = building[i];
                         temp.date = date[i];

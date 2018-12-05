@@ -5,11 +5,11 @@
     font-size: 1.5rem;
     text-align: center;
     padding: 0.25rem;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     cursor: pointer;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 812.98px) {
     .DrawerToggle {
         display: block;
     }
