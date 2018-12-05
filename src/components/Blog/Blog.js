@@ -13,7 +13,7 @@ class Blog extends Component {
   FetchDataFromRssFeed(){
     var request = new XMLHttpRequest();
     request.onreadystatechange = ()=>{
-      if(request.readyState==4&&request.status==200){
+      if(request.readyState===4&&request.status===200){
         var myObj = JSON.parse(request.responseTest);
         for(let i=0;i<1;i++){
           this.setState({
