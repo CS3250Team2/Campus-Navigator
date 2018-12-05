@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import classes from './CampusMap.css'
+import classes from './CampusMap.css';
 import { withFirebase } from '../../Firebase';
-let schedule = this.props.firebase.user.child('schedule');
-let building = schedule.building;
-
+// let schedule = this.props.firebase.user.child('schedule');
+// let building = schedule.building;
+let building=['Aerospace and Enginering Sci. 220',
+ 'Aerospace and Enginering Sci. 210',
+ 'Aerospace and Enginering Sci. 220',
+ 'Plaza Building M206'];
 
 let api = process.env.REACT_APP_GOOGLE_API;
 let request;
@@ -21,19 +24,10 @@ class CampusMap extends Component {
       service:null,
       infowindow:null,
       place:null,
-
-
-      origin: "colfax at auraria light rail, denver, CO",
-      destination: "tivoli, metro state, CO",
-      waypoints: [
-        {
-            location: "Aerospace and Enginering Sci. 220, metro state, CO'"
-        },
-        {
-            location:"the kings center, metro state, CO"
-        }
-      ],
-
+      request:null,
+      request1:null,
+      request2:null,
+      request3:null,
       directionsService: null,
       directionsDisplay: null,
       directionsDisplay2: null,
@@ -45,77 +39,72 @@ class CampusMap extends Component {
       }
     };
   }
-  componentDidMount() {
-    window.initMap = this.initMap.bind(this);
 
-    loadJS(`https://maps.googleapis.com/maps/api/js?key=${this.state.apiKey}&callback=initMap`);
-    loadJS(`https://maps.googleapis.com/maps/api/js?key=${this.state.apiKey}&libraries=places`);
-  }
 
-  driveToCampus=()=>{
-    let request={
-      origin:'',
-      travelMode:'DRIVE',
-      destination:"7th street parking garage, denver, CO",
-    }
-    this.walkToCampus();
-  }
-
-  driveTransitToCampus=()=>{
-
-    let request2 = {
-    query: 'Nearest lightrail',
-    fields: ['rail'],
-    };
-
-    let service = new window.google.maps.places.PlacesService(map);
-    service.findPlaceFromQuery(request, callback);
-
-    this.setState({
-      service:service,
-    });
-
-    let request={
-      origin:'',
-      travelMode:'DRIVE',
-      destination:this.state.place[0],//this needs to be nearest lightrail through places API
-    };
-    let request3={
-      origin:this.state.place[0],
-      travelMode:'RAIL',
-      destination:'Colfax at auraria',
-    }
-    this.walkToCampus();
-  }
-  transitToCampus=()=>{
-    let request={
-      origin:'',
-      travelMode:'TRANSIT',
-      destination:'Colfax at auraria',
-    };
-    this.walkToCampus();
-  }
-  walkToCampus=()=>{
-    let request1={
-      origin:'',
-      travelMode:'WALKING',
-      waypoints:[
-        {
-            location: building[0]
-        },
-        {
-            location:building[1]
-        },
-        {
-            location:building[2]
-        },
-        {
-            location:building[3]
-        },
-      ],
-      destination: building[4],
-    };
-    }
+  // driveToCampus=()=>{
+  //   let request={
+  //     origin:'',
+  //     travelMode:'DRIVE',
+  //     destination:"7th street parking garage, denver, CO",
+  //   }
+  //   this.walkToCampus();
+  // }
+  //
+  // driveTransitToCampus=()=>{
+  //
+  //   let request2 = {
+  //   query: 'Nearest lightrail',
+  //   fields: ['rail'],
+  //   };
+  //
+  //   let service = new window.google.maps.places.PlacesService(map);
+  //   service.findPlaceFromQuery(request, callback);
+  //
+  //   this.setState({
+  //     service:service,
+  //   });
+  //
+  //   let request={
+  //     origin:'',
+  //     travelMode:'DRIVE',
+  //     destination:this.state.place[0],//this needs to be nearest lightrail through places API
+  //   };
+  //   let request3={
+  //     origin:this.state.place[0],
+  //     travelMode:'RAIL',
+  //     destination:'Colfax at auraria',
+  //   }
+  //   this.walkToCampus();
+  // }
+  // transitToCampus=()=>{
+  //   let request={
+  //     origin:'',
+  //     travelMode:'TRANSIT',
+  //     destination:'Colfax at auraria',
+  //   };
+  //   this.walkToCampus();
+  // }
+  // walkToCampus=()=>{
+  //   let request1={
+  //     origin:'',
+  //     travelMode:'WALKING',
+  //     waypoints:[
+  //       {
+  //           location: building[0]
+  //       },
+  //       {
+  //           location:building[1]
+  //       },
+  //       {
+  //           location:building[2]
+  //       },
+  //       {
+  //           location:building[3]
+  //       },
+  //     ],
+  //     destination: building[4],
+  //   };
+  //   }
 
   initMap() {
     var map = new window.google.maps.Map(window.document.getElementById('map'), {
@@ -125,18 +114,18 @@ class CampusMap extends Component {
 
     });
     let directionsService = new window.google.maps.DirectionsService();
-    let directionsService2 = new window.google.maps.DirectionsService();
     let directionsDisplay = new window.google.maps.DirectionsRenderer();
     let directionsDisplay2 = new window.google.maps.DirectionsRenderer();
     let directionsService3 = new window.google.maps.DirectionsService();
     let directionsDisplay3 = new window.google.maps.DirectionsRenderer();
 
-
+    if(request1!=null){
       directionsService.route(request, function(result, status) {
-        if(status === 'OK') {
-          directionsDisplay.setDirections(result);
-        }
-      });
+          if(status === 'OK') {
+            directionsDisplay.setDirections(result);
+          }
+        });
+    }
       directionsService.route(request1, function(result, status) {
         if(status === 'OK') {
           directionsDisplay2.setDirections(result);
@@ -184,16 +173,22 @@ class CampusMap extends Component {
     //   directionsDisplay: directionsDisplay,
     //   directionsDisplay2: directionsDisplay2,
     // });
+    componentDidMount() {
+      window.initMap = this.initMap.bind(this);
+
+      loadJS(`https://maps.googleapis.com/maps/api/js?key=${this.state.apiKey}&callback=initMap`);
+      loadJS(`https://maps.googleapis.com/maps/api/js?key=${this.state.apiKey}&libraries=places`);
+    }
     render() {
       return (
-        <div>
+        <div className={classes.map}>
           <button onClick={this.walkToCampus}>Click here if you live nearby and want to walk.</button>
           <button onClick={this.driveToCampus}>Click here if you want to drive downtown and park.</button>
           <button onClick={this.driveTransitToCampus}>Click here if you want to drive downtown and park.</button>
           <button onClick={this.walkToCampus}>Click here if you want to drive downtown and park.</button>
 
 
-        <div id="map" className={classes.map} style={this.state.mapStyle}>This should be a map</div>
+        <div id="map"  style={this.state.mapStyle}>This should be a map</div>
         </div>
       );
     }
