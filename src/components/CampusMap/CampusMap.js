@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import classes from './CampusMap.css'
+import { withFirebase } from '../../Firebase';
+let schedule = user.child('schedule');
+
+let api = process.env.REACT_APP_GOOGLE_API;
 class CampusMap extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      apiKey: 'AIzaSyDXCGRAllicDt6M1dAtjjM6qG8dvtH1QuA',
+      apiKey: api,
       map: null,
+
+
       origin: "colfax at auraria light rail, denver, CO",
       destination: "tivoli, metro state, CO",
       waypoints: [
@@ -28,34 +34,42 @@ class CampusMap extends Component {
       }
     };
   }
+  driveToCampus(){
 
-  // transitMode() {
-  //   if (button1 === "1") {
-  //     if (button2 === "1") {
-  //       tmode1 = "DRIVING"
-  //       tmode2 = "TRANSIT"
-  //       tmode3 = "WALKING"
-  //     }
-  //     else {
-  //       tmode1 = "TRANSIT"
-  //       tmode2 = "TRANSIT"
-  //       tmode3 = "WALKING"
-  //     }
-  //   }
-  //   else {
-  //     if (button2 === "1") {
-  //       tmode1 = "DRIVING"
-  //       tmode2 = "DRIVING"
-  //       tmode3 = "WALKING"
-  //     }
-  //     else {
-  //       tmode1 = "WALKING"
-  //       tmode2 = "WALKING"
-  //       tmode3 = "WALKING"
-  //     }
-  //   }
-  // }
+  }
+  driveTransitToCampus(){
 
+  }
+  transitToCampus(){
+
+  }
+  walkToCampus(){
+    let request1={
+      origin:'',
+      travelMode:'WALKING',
+      waypoints:[
+        {
+            location: building[0]
+        },
+        {
+            location:building[1]
+        },
+        {
+            location:building[2]
+        },
+        {
+            location:building[3]
+        },
+      ],
+      destination: building[4],
+    };
+
+    directionsService.route(request1, function(result, status) {
+      if(status === 'OK') {
+        directionsDisplay2.setDirections(result);
+      }
+    });
+  }
   componentDidMount() {
     window.initMap = this.initMap.bind(this);
 
@@ -67,47 +81,23 @@ class CampusMap extends Component {
       center: {lat: -34.397, lng: 150.644},
       zoom: 8
     });
-
     var directionsService = new window.google.maps.DirectionsService();
     var directionsDisplay = new window.google.maps.DirectionsRenderer();
     var directionsDisplay2 = new window.google.maps.DirectionsRenderer();
 
-    var infowindow;
-    infowindow = new window.google.maps.InfoWindow();
-
-    directionsDisplay.setMap(map);
-    directionsDisplay2.setMap(map);
-
-
-    var request = {
-      origin: this.state.origin,
-      destination: this.state.destination,
-      waypoints: this.state.waypoints,
-      travelMode: 'WALKING'
-    };
-
-    directionsService.route(request, function(result, status) {
-      if(status === 'OK') {
-        directionsDisplay.setDirections(result);
-      }
-    });
-
-    var request2 = {
-      origin: "10700 E Dartmouth Ave, 80014, Aurora, CO",
-      destination: "7th street parking garage, denver, CO",
-      waypoints: [
-        {
-            location: "Dayton Light Rail Station metro state, CO'"
-        },
-      ],
-      travelMode: 'DRIVING'
-    };
-
-    directionsService.route(request2, function(result, status) {
-      if(status === 'OK') {
-        directionsDisplay2.setDirections(result);
-      }
-    });
+    // directionsDisplay.setMap(map);
+    // directionsDisplay2.setMap(map);
+    // directionsService.route(request, function(result, status) {
+    //   if(status === 'OK') {
+    //     directionsDisplay.setDirections(result);
+    //   }
+    // });
+    //
+    // directionsService.route(request2, function(result, status) {
+    //   if(status === 'OK') {
+    //     directionsDisplay2.setDirections(result);
+    //   }
+    // });
 
     this.setState({
       map: map,
@@ -134,4 +124,4 @@ function loadJS(src) {
   ref.parentNode.insertBefore(script, ref);
 }
 
-export default CampusMap;
+export default withFirebase(CampusMap);
