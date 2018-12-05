@@ -8,6 +8,7 @@ let building = schedule.building;
 let api = process.env.REACT_APP_GOOGLE_API;
 let request;
 let request1;
+let request3;
 let map;
 
 class CampusMap extends Component {
@@ -36,6 +37,7 @@ class CampusMap extends Component {
       directionsService: null,
       directionsDisplay: null,
       directionsDisplay2: null,
+      directionsDisplay3:null,
 
       mapStyle: {
         width: '',
@@ -50,26 +52,27 @@ class CampusMap extends Component {
     loadJS(`https://maps.googleapis.com/maps/api/js?key=${this.state.apiKey}&libraries=places`);
   }
 
-  driveToCampus(){
+  driveToCampus=()=>{
     let request={
       origin:'',
       travelMode:'DRIVE',
       destination:"7th street parking garage, denver, CO",
     }
+    this.walkToCampus();
   }
 
-  driveTransitToCampus(){
+  driveTransitToCampus=()=>{
 
     let request2 = {
     query: 'Nearest lightrail',
     fields: ['rail'],
     };
 
-    service = new google.maps.places.PlacesService(map);
+    let service = new window.google.maps.places.PlacesService(map);
     service.findPlaceFromQuery(request, callback);
 
     this.setState({
-      service:service,      
+      service:service,
     });
 
     let request={
@@ -82,15 +85,17 @@ class CampusMap extends Component {
       travelMode:'RAIL',
       destination:'Colfax at auraria',
     }
+    this.walkToCampus();
   }
-  transitToCampus(){
+  transitToCampus=()=>{
     let request={
       origin:'',
       travelMode:'TRANSIT',
       destination:'Colfax at auraria',
     };
+    this.walkToCampus();
   }
-  walkToCampus(){
+  walkToCampus=()=>{
     let request1={
       origin:'',
       travelMode:'WALKING',
@@ -123,6 +128,8 @@ class CampusMap extends Component {
     let directionsService2 = new window.google.maps.DirectionsService();
     let directionsDisplay = new window.google.maps.DirectionsRenderer();
     let directionsDisplay2 = new window.google.maps.DirectionsRenderer();
+    let directionsService3 = new window.google.maps.DirectionsService();
+    let directionsDisplay3 = new window.google.maps.DirectionsRenderer();
 
 
       directionsService.route(request, function(result, status) {
@@ -130,18 +137,28 @@ class CampusMap extends Component {
           directionsDisplay.setDirections(result);
         }
       });
-      directionsService2.route(request1, function(result, status) {
+      directionsService.route(request1, function(result, status) {
         if(status === 'OK') {
           directionsDisplay2.setDirections(result);
         }
       });
+      if(request3!=null){
+        directionsService.route(request3, function(result, status) {
+          if(status === 'OK') {
+            directionsDisplay3.setDirections(result);
+          }
+        });
+      }
+
       directionsDisplay.setMap(map);
       directionsDisplay2.setMap(map);
+      directionsDisplay3.setMap(map);
       this.setState({
         map: map,
         directionsService: directionsService,
         directionsDisplay: directionsDisplay,
         directionsDisplay2: directionsDisplay2,
+        directionsDisplay3:directionsDisplay3,
       });
     }
 
@@ -169,7 +186,15 @@ class CampusMap extends Component {
     // });
     render() {
       return (
+        <div>
+          <button onClick={this.walkToCampus}>Click here if you live nearby and want to walk.</button>
+          <button onClick={this.driveToCampus}>Click here if you want to drive downtown and park.</button>
+          <button onClick={this.driveTransitToCampus}>Click here if you want to drive downtown and park.</button>
+          <button onClick={this.walkToCampus}>Click here if you want to drive downtown and park.</button>
+
+
         <div id="map" className={classes.map} style={this.state.mapStyle}>This should be a map</div>
+        </div>
       );
     }
 }
@@ -181,7 +206,7 @@ class CampusMap extends Component {
   ref.parentNode.insertBefore(script, ref);
 }
 function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
+  if (status == window.google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       this.setState({
         place:results[i],
