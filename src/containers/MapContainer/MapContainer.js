@@ -1,9 +1,19 @@
-import CampusMapOld from './components/CampusMap/CampusMapOld';
+import CampusMapOld from '../../components/CampusMap/CampusMapOld';
+import CampusMap from'../../components/CampusMap/CampusMap';
 import React, { Component } from 'react';
 import { withFirebase } from '../../Firebase';
 import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from '../../registerServiceWorker';
+import Content from '../Content/Content';
 let api = process.env.REACT_APP_GOOGLE_API;
+let request;
+let request1;
+let request2;
+let request3;
+let building=['Aerospace and Enginering Sci. 220',
+ 'Aerospace and Enginering Sci. 210',
+ 'Aerospace and Enginering Sci. 220',
+ 'Plaza Building M206'];
 class MapContainer extends React.Component{
   constructor(props) {
     super(props);
@@ -18,15 +28,6 @@ class MapContainer extends React.Component{
       request1:null,
       request2:null,
       request3:null,
-      directionsService: null,
-      directionsDisplay: null,
-      directionsDisplay2: null,
-      directionsDisplay3:null,
-
-      mapStyle: {
-        width: '',
-        height: '500px'
-      }
     };
   }
   driveToCampus=()=>{
@@ -35,11 +36,20 @@ class MapContainer extends React.Component{
       travelMode:'DRIVE',
       destination:"7th street parking garage, denver, CO",
     }
-    this.walkToCampus;
+    this.walkToCampus();
     this.setState({
       request:request,
       request1:request1,
     });
+    ReactDOM.render(
+      <CampusMap
+        request={this.request}
+        request1={this.request1}
+        request2={this.request2}
+        request3={this.request4
+      }/>,
+      document.getElementById('mapCont')
+    );
     //here is where we would render the CampusMap
   }
 
@@ -49,25 +59,7 @@ class MapContainer extends React.Component{
     query: 'Nearest lightrail',
     fields: ['rail'],
     };
-
-    let service = new window.google.maps.places.PlacesService(map);
-    service.findPlaceFromQuery(request, callback);
-    this.walkToCampus;
-    this.setState({
-      service:service,
-    });
-
-    let request={
-      origin:'',
-      travelMode:'DRIVE',
-      destination:this.state.place[0],//this needs to be nearest lightrail through places API
-    };
-    let request3={
-      origin:this.state.place[0],
-      travelMode:'RAIL',
-      destination:'Colfax at auraria',
-    }
-    this.walkToCampus;
+    this.walkToCampus();
     this.setState({
       request:request,
       request1:request1,
@@ -75,6 +67,15 @@ class MapContainer extends React.Component{
       request3:request3,
     });
     //here is where we would render the CampusMap
+    ReactDOM.render(
+      <CampusMap
+        request={this.request}
+        request1={this.request1}
+        request2={this.request2}
+        request3={this.request3
+      }/>,
+      document.getElementById('mapCont')
+    );
   }
   transitToCampus=()=>{
     let request={
@@ -82,11 +83,20 @@ class MapContainer extends React.Component{
       travelMode:'TRANSIT',
       destination:'Colfax at auraria',
     };
-    this.walkToCampus;
+    this.walkToCampus();
     this.setState({
       request:request,
       request1:request1,
     });
+    ReactDOM.render(
+      <CampusMap
+        request={this.request}
+        request1={this.request1}
+        request2={this.request2}
+        request3={this.request4
+      }/>,
+      document.getElementById('mapCont')
+    );
     //here is where we would render the CampusMap
   }
   walkToCampus=()=>{
@@ -112,16 +122,27 @@ class MapContainer extends React.Component{
     this.setState({
       request1:request1,
     });
+    ReactDOM.render(
+      <CampusMap
+        request={this.request}
+        request1={this.request1}
+        request2={this.request2}
+        request3={this.request4
+      }/>,
+      document.getElementById('mapCont')
+    );
     //here is where we would render the CampusMap
   }
   render(){
     return(
-      <div>
-      <button onClick={this.walkToCampus}>Click here if you live nearby and want to walk.</button>
-      <button onClick={this.driveToCampus}>Click here if you want to drive downtown and park.</button>
-      <button onClick={this.driveTransitToCampus}>Click here if you want to drive downtown and park.</button>
-      <button onClick={this.walkToCampus}>Click here if you want to drive downtown and park.</button>
-      </div>
+      <Content>
+        <button onClick={this.walkToCampus}>Click here if you live nearby and want to walk.</button>
+        <button onClick={this.driveToCampus}>Click here if you want to drive downtown and park.</button>
+        <button onClick={this.driveTransitToCampus}>Click here if you want to drive to a lightrail station take the lightrail then walk.</button>
+        <button onClick={this.walkToCampus}>Click here if you can't drive and would like to use public transportation</button>
+        <div id='mapCont'></div>
+      </Content>
     );
   }
 }
+export default MapContainer;
