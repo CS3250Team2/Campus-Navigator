@@ -5,6 +5,7 @@ import { withFirebase } from '../../Firebase';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from '../../registerServiceWorker';
 import Content from '../Content/Content';
+import classes from './MapContainer.css'
 let api = process.env.REACT_APP_GOOGLE_API;
 let request;
 let request1;
@@ -32,7 +33,7 @@ class MapContainer extends React.Component{
   }
   driveToCampus=()=>{
     let request={
-      origin:'',
+      origin:'10782 Huntwick St, 80130,Highlands Ranch, CO',
       travelMode:'DRIVE',
       destination:"7th street parking garage, denver, CO",
     }
@@ -79,7 +80,7 @@ class MapContainer extends React.Component{
   }
   transitToCampus=()=>{
     let request={
-      origin:'',
+      origin:'10782 Huntwick St, 80130,Highlands Ranch, CO',
       travelMode:'TRANSIT',
       destination:'Colfax at auraria',
     };
@@ -101,23 +102,23 @@ class MapContainer extends React.Component{
   }
   walkToCampus=()=>{
     let request1={
-      origin:'',
+      origin:'10782 Huntwick St, 80130,Highlands Ranch, CO',
       travelMode:'WALKING',
       waypoints:[
         {
-            location: building[0]
+            location: '${building[0]},metro state,CO'
         },
         {
-            location:building[1]
+            location:'${building[1]},metro state,CO'
         },
         {
-            location:building[2]
+            location:'${building[2]},metro state,CO'
         },
         {
-            location:building[3]
+            location:'${building[3]},metro state,CO'
         },
       ],
-      destination: building[4],
+      destination: '${building[4]},metro state,CO',
     };
     this.setState({
       request1:request1,
@@ -135,13 +136,16 @@ class MapContainer extends React.Component{
   }
   render(){
     return(
-      <Content>
-        <button onClick={this.walkToCampus}>Click here if you live nearby and want to walk.</button>
-        <button onClick={this.driveToCampus}>Click here if you want to drive downtown and park.</button>
-        <button onClick={this.driveTransitToCampus}>Click here if you want to drive to a lightrail station take the lightrail then walk.</button>
-        <button onClick={this.walkToCampus}>Click here if you can't drive and would like to use public transportation</button>
-        <div id='mapCont'></div>
-      </Content>
+      <div className={classes.side}>
+        <Content>
+          <button onClick={this.walkToCampus}>Click here if you live nearby and want to walk.</button>
+          <button onClick={this.driveToCampus}>Click here if you want to drive downtown and park.</button>
+          <button onClick={this.driveTransitToCampus}>Click here if you want to drive to a lightrail station take the lightrail then walk.</button>
+          <button onClick={this.walkToCampus}>Click here if you can't drive and would like to use public transportation</button>
+          <div id='mapCont'></div>
+        </Content>
+      </div>
+
     );
   }
 }

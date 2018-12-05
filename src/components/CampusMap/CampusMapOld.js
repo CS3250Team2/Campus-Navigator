@@ -56,7 +56,7 @@ class CampusMapOld extends Component {
     //   }
     // });
 
-    var request2 = {
+    let request2 = {
       origin: "10700 E Dartmouth Ave, 80014, Aurora, CO",
       destination: "7th street parking garage, denver, CO",
       travelMode: 'DRIVING'

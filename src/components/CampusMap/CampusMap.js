@@ -17,7 +17,11 @@ let map;
 class CampusMap extends Component {
   constructor(props) {
     super(props);
-
+    request=props.request;
+    request1=props.request1;
+    request2=props.request2;
+    request3=props.request3;
+    console.log(request3);
     this.state = {
       apiKey: api,
       map: null,
@@ -58,7 +62,6 @@ class CampusMap extends Component {
     let directionsService = new window.google.maps.DirectionsService();
     let directionsDisplay = new window.google.maps.DirectionsRenderer();
     let directionsDisplay2 = new window.google.maps.DirectionsRenderer();
-    let directionsService3 = new window.google.maps.DirectionsService();
     let directionsDisplay3 = new window.google.maps.DirectionsRenderer();
 
     var infowindow;
@@ -74,12 +77,12 @@ class CampusMap extends Component {
       this.setState({
         service:service,
       });
-      let request={
-        origin:'',
+      request={
+        origin:'10782 Huntwick St, 80130,Highlands Ranch, CO',
         travelMode:'DRIVE',
         destination:this.state.place[0],//this needs to be nearest lightrail through places API
       };
-      let request3={
+      request3={
         origin:this.state.place[0],
         travelMode:'RAIL',
         destination:'Colfax at auraria',
@@ -115,6 +118,17 @@ class CampusMap extends Component {
         directionsDisplay2: directionsDisplay2,
         directionsDisplay3:directionsDisplay3,
       });
+      window.google.maps.event.addDomListener(window, 'resize', function() {
+        window.google.maps.event.trigger(this.map, 'resize');
+      });
+
+      //Preserve map perspective when after resize
+      window.google.maps.event.addListener(this.map, 'resize', function() {
+        var center = this.map.getCenter();
+        window.google.maps.event.addListenerOnce(this.map, 'center_changed', function() {
+          this.map.setCenter(center);
+        });
+      });
     }
 
     // var directionsDisplay2 = new window.google.maps.DirectionsRenderer();
@@ -146,7 +160,7 @@ class CampusMap extends Component {
       );
     }
 }
-  function loadJS(src) {
+function loadJS(src) {
   var ref = window.document.getElementsByTagName("script")[0];
   var script = window.document.createElement("script");
   script.src = src;
@@ -154,7 +168,7 @@ class CampusMap extends Component {
   ref.parentNode.insertBefore(script, ref);
 }
 function callback(results, status) {
-  if (status == window.google.maps.places.PlacesServiceStatus.OK) {
+  if (status === window.google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       this.setState({
         place:results[i],
@@ -167,4 +181,4 @@ function callback(results, status) {
 
 
 
-export default withFirebase(CampusMap);
+export default CampusMap;
