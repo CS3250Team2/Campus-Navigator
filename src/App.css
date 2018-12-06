@@ -16,6 +16,7 @@
 /* Responsive Styling */
 @media (max-width: 812.98px) {
     .App {
+        grid-template-rows: 10% auto auto;
         grid-template-columns: 5% auto 5%;
         grid-column-gap: 0;
     }

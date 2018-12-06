@@ -1,0 +1,15 @@
+.Map {
+    grid-row: 2;
+    grid-column: 3 / 4;
+    height: 75vh;
+    width: 50vw;
+    margin-top: 1rem;
+}
+
+@media (max-width: 812.98px) {
+    .Map{
+        grid-row: 3;
+        grid-column: 2;
+        width: 100%;
+    }
+}
