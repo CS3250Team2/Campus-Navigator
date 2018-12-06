@@ -20,7 +20,7 @@ A web application designed to orient students to the MSU Denver and other campus
 * Ben Mettlach
 * Aldo Jarmillo
 * Tate Wongweeratorn
-* Justin Treece
+* Justin Treece(Pashweetie/Team2CS3250)
 * Wesley Kramer
 
 ## Disclaimer
