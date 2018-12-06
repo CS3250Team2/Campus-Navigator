@@ -16,11 +16,11 @@ A web application designed to orient students to the MSU Denver and other campus
 
 ## Team 2
 * Jeremy Oliver
-* Ryan Hiller
+* Ryan Hiller(rhiller)
 * Ben Mettlach
 * Aldo Jarmillo
 * Tate Wongweeratorn
-* Justin Treece
+* Justin Treece(pashweetie/projectGroup3250Team2)
 * Wesley Kramer
 
 ## Disclaimer
