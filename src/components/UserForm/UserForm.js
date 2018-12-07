@@ -23,8 +23,12 @@ class UserForm extends React.Component {
 
     startUpload = event => {
         event.preventDefault();
+        document.getElementsByTagName('body')[0].style.cursor = 'progress';
         this.fileUploader.startUpload(this.state.selectedFile);
-        this.props.history.push(routes.FEATURES);
+        return new Promise(resolve => setTimeout(resolve, 4000)).then(() => {
+            document.getElementsByTagName('body')[0].style.cursor = 'auto';
+            this.props.history.push(routes.SCHEDULE);
+        });
     };
 
     render() {

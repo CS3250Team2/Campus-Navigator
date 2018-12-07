@@ -23,7 +23,7 @@ const navItems = () => (
 const NavAuth = () => (
     <ul className={classes.NavItems}>
         <div className={classes.Navigation}>
-            <NavItem link={routes.HOME}>HOME</NavItem>
+            <NavItem link={routes.SCHEDULE}>HOME</NavItem>
             <NavItem link={routes.FEATURES}>FEATURES</NavItem>
             <NavItem link={routes.CONTACT}>CONTACT</NavItem>
         </div>

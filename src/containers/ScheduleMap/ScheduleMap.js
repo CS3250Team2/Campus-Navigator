@@ -5,8 +5,6 @@ import Schedule from '../../components/Schedule/Schedule';
 import { withFirebase } from '../../Firebase';
 import { withAuthorization } from '../../hoc/Session';
 
-//import classes from './ScheduleMap';
-
 const INITIAL_STATE = { schedule: [], day: '', loading: false, error: null };
 
 class ScheduleMap extends React.Component {

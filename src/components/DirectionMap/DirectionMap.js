@@ -6,10 +6,6 @@ import { compose, withProps, lifecycle } from 'recompose';
 import classes from './DirectionMap.css';
 
 class DirectionMap extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const url1 = 'https://maps.googleapis.com/maps/api/js?key=';
         const url2 = `${process.env.REACT_APP_GOOGLE_KEY}&v=3.exp&libraries=geometry,drawing,places`;
@@ -28,10 +24,18 @@ class DirectionMap extends React.Component {
             lifecycle({
                 componentDidMount() {
                     const DirectionsService = new google.maps.DirectionsService();
-                    const startPoint = `${buildings[0]}, Auraria, CO, USA`;
-                    const endPoint = `${buildings[buildings.length - 1]}, Auraria, CO, USA`;
+                    let startPoint = '';
+                    let endPoint = '';
                     let request = {};
                     let ways = [];
+
+                    if (buildings.length > 0) {
+                        startPoint = `${buildings[0]}, Auraria, CO, USA`;
+                        endPoint = `${buildings[buildings.length - 1]}, Auraria, CO, USA`;
+                    } else {
+                        startPoint = new google.maps.LatLng(39.745, -105.006);
+                        endPoint = startPoint;
+                    }
 
                     request.origin = startPoint;
                     request.destination = endPoint;
@@ -39,34 +43,29 @@ class DirectionMap extends React.Component {
 
                     if (buildings.length > 2) {
                         for (let i = 1; i < buildings.length - 1; i++) {
-                            ways.push({location: `${buildings[i]}, Auraria, CO, USA`});
+                            ways.push({ location: `${buildings[i]}, Auraria, CO, USA` });
                         }
                     }
 
                     if (buildings.length === 0) {
                         request.origin = new google.maps.LatLng(39.745, -105.006);
-                        request.endPoint = request.origin;
+                        request.destination = request.origin;
                     }
-
-                    console.log()
 
                     if (ways.length > 0) {
                         request.waypoints = ways;
                     }
 
-                    DirectionsService.route(
-                        request,
-                        (res, status) => {
-                            if (status === 'OK') {
-                                this.setState({
-                                    directions: { ...res },
-                                    markers: true,
-                                });
-                            } else {
-                                console.error(`Error fetching directions ${res}`);
-                            }
+                    DirectionsService.route(request, (res, status) => {
+                        if (status === 'OK') {
+                            this.setState({
+                                directions: { ...res },
+                                markers: true,
+                            });
+                        } else {
+                            console.error(`Error fetching directions ${res}`);
                         }
-                    );
+                    });
                 },
             })
         )(props => (
