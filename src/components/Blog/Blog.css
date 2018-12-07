@@ -1,0 +1,11 @@
+.Blog {
+    width: 100%;
+}
+
+.Blog a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin: 2%;
+    font-size: 0.8rem;
+}

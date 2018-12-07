@@ -3,22 +3,26 @@ import React from 'react';
 import classes from './Schedule.css';
 
 const formatClasses = classes => {
-    return (
-        <ul>
-            {classes.map((aClass, idx) => (
-                <li className={classes.Class1} key={`${aClass.days}${idx}`}>
-                    <h4>Class {idx + 1}</h4>
-                    <span>
-                        <strong>Building:</strong> {aClass.building}
-                    </span>
-                    <br />
-                    <span>
-                        <strong>Time:</strong> {aClass.startTime} - {aClass.endTime}
-                    </span>
-                </li>
-            ))}
-        </ul>
-    );
+    if (classes.length > 0) {
+        return (
+            <ul>
+                {classes.map((aClass, idx) => (
+                    <li className={classes.Class1} key={`${aClass.days}${idx}`}>
+                        <h4>Class {idx + 1}</h4>
+                        <span>
+                            <strong>Building:</strong> {aClass.building}
+                        </span>
+                        <br />
+                        <span>
+                            <strong>Time:</strong> {aClass.startTime} - {aClass.endTime}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+        );
+    } else {
+        return <p>No classes today!</p>;
+    }
 };
 
 const Schedule = props => {
@@ -41,7 +45,7 @@ const Schedule = props => {
     if (props.schedule.length > 0) {
         formattedClasses = formatClasses(props.schedule);
     } else {
-        formattedClasses = <span>No classes today!</span>
+        formattedClasses = <span>No classes today!</span>;
     }
 
     return (
